@@ -2,6 +2,10 @@ require 'spec_helper'
 
 describe Googl::Shorten do
 
+  before :each do
+    fake_urls
+  end
+
   context "when request new short url" do
 
     subject { Googl::Shorten.new('http://www.zigotto.com') }

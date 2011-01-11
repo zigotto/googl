@@ -1,0 +1,18 @@
+HTTP/1.1 200 OK
+ETag: "EEZ1AD443JkEgW3KJFaymzTd26A/wKW1RiLjLbyUh3AbmrhLHKj0R24"
+Expires: Tue, 11 Jan 2011 21:49:04 GMT
+Date: Tue, 11 Jan 2011 21:44:04 GMT
+Cache-Control: public, max-age=300, must-revalidate, no-transform
+Content-Type: application/json; charset=UTF-8
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Server: GSE
+Transfer-Encoding: chunked
+
+{
+ "kind": "urlshortener#url",
+ "id": "http://goo.gl/7lob",
+ "longUrl": "http://jlopes.zigotto.com.br/",
+ "status": "OK"
+}
