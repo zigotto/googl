@@ -20,3 +20,11 @@ Google URL Shortener API in Ruby
 
   url.long_url
   => "http://www.zigotto.com/"
+
+== Installation
+
+  gem install googl
+
+== License
+
+MIT License. Copyright 2010 Zigotto®. http://www.zigotto.com.br
