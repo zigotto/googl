@@ -8,7 +8,9 @@ describe Googl::Expand do
   
   context "when expand any goo.gl short URL" do
 
-    subject { Googl::Expand.new('http://goo.gl/7lob') }
+    it { Googl.should respond_to(:expand) }
+
+    subject { Googl.expand('http://goo.gl/7lob') }
 
     describe "#long_url" do
       it "should return a long url" do

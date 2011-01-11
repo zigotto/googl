@@ -8,7 +8,9 @@ describe Googl::Shorten do
 
   context "when request new short url" do
 
-    subject { Googl::Shorten.new('http://www.zigotto.com') }
+    it { Googl.should respond_to(:shorten) }
+
+    subject { Googl.shorten('http://www.zigotto.com') }
 
     describe "#short_url" do
       it "should return a short URL" do
