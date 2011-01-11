@@ -1,0 +1,22 @@
+= googl
+
+Google URL Shortener API in Ruby
+
+== Basic Usage
+
+=== Shorten a long URL
+
+  url = Googl::Shorten.new('http://www.zigotto.com')
+
+  url.short_url
+  => "http://goo.gl/ump4S"
+
+  url.long_url
+  => "http://www.zigotto.com/"
+
+=== Expand a short URL
+
+  url = Googl::Expand.new('http://goo.gl/ump4S')
+
+  url.long_url
+  => "http://www.zigotto.com/"
