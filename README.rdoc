@@ -27,4 +27,4 @@ Google URL Shortener API in Ruby
 
 == License
 
-MIT License. Copyright 2010 Zigotto®. http://www.zigotto.com.br
+MIT License. Copyright 2011 Zigotto®. http://www.zigotto.com.br
