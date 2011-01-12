@@ -1,7 +1,5 @@
 source "http://rubygems.org"
 
-gem "httparty", "~> 0.6.1"
-
 group :development do
   gem "rspec", "~> 2.3.0"
   gem "bundler", "~> 1.0.0"
