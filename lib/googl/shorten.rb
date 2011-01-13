@@ -15,6 +15,10 @@ module Googl
       end
     end
 
+    def qr_code
+      short_url + ".qr" if !short_url.blank?
+    end
+
   end
 
 end

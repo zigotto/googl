@@ -24,6 +24,12 @@ describe Googl::Shorten do
       end
     end
 
+    describe "#qr_code" do
+      it "should return a url for generate a qr code" do
+        subject.qr_code.should == 'http://goo.gl/ump4S.qr'
+      end
+    end
+
   end
 
 end
