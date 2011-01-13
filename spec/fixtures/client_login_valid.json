@@ -1,0 +1,14 @@
+HTTP/1.1 200 OK
+Content-Type: text/plain
+Cache-control: no-cache, no-store
+Pragma: no-cache
+Expires: Mon, 01-Jan-1990 00:00:00 GMT
+Date: Thu, 13 Jan 2011 11:47:47 GMT
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Content-Length: 755
+Server: GSE
+
+SID=DQAAAKwAAABcU9-c9pgL8tAf6T6oEBT4wFgOskDQE7t_f_ehTKhrlKULwNhUXOlaZgeG8e8dZwfV6Odpzb15CzCSQ
+LSID=DQAAAK4AAAC9oNnhvkDo8-jbQQbWzyvi_sAlt9ZkcmFoKsed7zfbmBs0rurcEL5vuN0DR_0s60v2j9kVf0_2yUVu
+Auth=DQAAAK8AAAC9ahL-o7g

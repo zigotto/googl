@@ -1,15 +1,18 @@
 module Googl
 
-  class Shorten
+  class Shorten < Base
+
+    API_URL = 'https://www.googleapis.com/urlshortener/v1/url'
 
     attr_accessor :short_url, :long_url
 
     def initialize(long_url)
+      modify_headers('Content-Type' => 'application/json')
       options = {"longUrl" => long_url}.inspect
-      resp = Request.post('/urlshortener/v1/url', :body => options)
+      resp = Request.post(API_URL, :body => options)
       if resp.code == 200
-        self.short_url  = resp['id']
-        self.long_url   = resp['longUrl']
+        @short_url  = resp['id']
+        @long_url   = resp['longUrl']
       else
         resp.response
       end

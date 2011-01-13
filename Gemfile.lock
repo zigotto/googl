@@ -1,9 +1,9 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    addressable (2.2.2)
     crack (0.1.8)
     diff-lcs (1.1.2)
-    fakeweb (1.3.0)
     git (1.2.5)
     httparty (0.6.1)
       crack (= 0.1.8)
@@ -21,14 +21,17 @@ GEM
     rspec-expectations (2.3.0)
       diff-lcs (~> 1.1.2)
     rspec-mocks (2.3.0)
+    webmock (1.6.2)
+      addressable (>= 2.2.2)
+      crack (>= 0.1.7)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   bundler (~> 1.0.0)
-  fakeweb (~> 1.3.0)
   httparty (= 0.6.1)
   jeweler (~> 1.5.2)
   rcov
   rspec (~> 2.3.0)
+  webmock (~> 1.6.2)

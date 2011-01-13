@@ -1,0 +1,18 @@
+HTTP/1.1 200 OK
+ETag: "EEZ1AD443JkEgW3KJFaymzTd26A/41aG_KwuemZSq8rrtXp-EsY0Iuk"
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: Fri, 01 Jan 1990 00:00:00 GMT
+Date: Thu, 13 Jan 2011 13:07:26 GMT
+Content-Type: application/json; charset=UTF-8
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Server: GSE
+Transfer-Encoding: chunked
+
+{
+ "kind": "urlshortener#url",
+ "id": "http://goo.gl/R3mYj",
+ "longUrl": "http://www.zigotto.net/"
+}

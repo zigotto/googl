@@ -1,8 +1,10 @@
 require 'httparty'
 
+require 'googl/base'
 require 'googl/request'
 require 'googl/shorten'
 require 'googl/expand'
+require 'googl/client_login'
 
 module Googl
 
@@ -12,6 +14,10 @@ module Googl
 
   def self.expand(url)
     Googl::Expand.new(url)
+  end
+
+  def self.client(email, passwd)
+    Googl::ClientLogin.new(email, passwd)
   end
 
 end
