@@ -14,12 +14,35 @@ Google URL Shortener API in Ruby
   url.long_url
   => "http://www.zigotto.com/"
 
+  url.qr_code
+  => "http://goo.gl/ump4S.qr"
+
 === Expand a short URL
 
   url = Googl.expand('http://goo.gl/ump4S')
 
   url.long_url
   => "http://www.zigotto.com/"
+
+== Authentication
+
+The Google URL Shortener API supports the OAuth and ClientLogin mechanisms for authenticating.
+
+For shorten requests, each short URL for an authenticated user is unique, and thus will gather unique click statistics. In addition, it shows up on the user's dashboard at http://goo.gl.
+
+=== ClientLogin
+
+  client = Googl.client('user@gmail.com', 'my_valid_password')
+
+  url = client.shorten('https://github.com/zigotto/googl')
+  url.short_url
+  => http://goo.gl/DWDfi
+
+Go to http://goo.gl to see URL statistics.
+
+=== OAuth
+
+  TODO
 
 == Installation
 
