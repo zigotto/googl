@@ -1,0 +1,30 @@
+@charset "utf-8";
+/*-----------------------------------------------
+ * Desenvolvido por Zigotto.com.br - 2011 -------
+ * contato@zigotto.com.br | +55 (12) 3942.8874 --
+ * ---------------------------------------------*/
+
+
+/*
+ * Reference
+ * ----------------------------------------------
+ *
+ * 01 - Global
+ * 02 - Header
+ * 03 - Content
+ * 04 - Footer
+ *
+ *
+ *
+ * -----------------------------------------------*/
+
+/*
+ * 01 - Global
+ * ----------------------------------------------*/
+* { margin:0px; padding:0px; outline:none; }
+body { font-family:Helvetica, Arial, Verdana; font-size:13px; }
+br.clear { clear:both; }
+
+/*
+ * 02 - Header
+ * ----------------------------------------------*/
