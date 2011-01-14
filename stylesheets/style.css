@@ -60,3 +60,8 @@ div#content div.descriptions hr { width:250px; border:solid 1px #CCC; background
 div#content div.descriptions pre {  width:570px; padding:20px 20px; border:solid 1px #DDD; background:#F9F9F9; margin:0px 0px 20px 35px; font-family:Helvetica, Arial, Verdana; font-size:14px; }
 div#content div.descriptions a { color:#333; font-weight:bold; }
 div#content div.descriptions a:hover { text-decoration:underline; }
+
+/*
+ * 04 - Footer
+ * ----------------------------------------------*/
+div#footer { width:1000px; padding:10px 0px; background:#FFF; float:left; margin:10px 0px; }
