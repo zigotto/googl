@@ -15,6 +15,9 @@
  * 04 - Footer
  *
  *
+ * Highlights
+ * 01 - #C2BEA8; - brow
+ * 02 - #DF132D; - ruby
  *
  * -----------------------------------------------*/
 
@@ -22,9 +25,22 @@
  * 01 - Global
  * ----------------------------------------------*/
 * { margin:0px; padding:0px; outline:none; }
-body { font-family:Helvetica, Arial, Verdana; font-size:13px; }
+body { font-family:Helvetica, Arial, Verdana; font-size:13px; background:#F8F6E9; color:#333; }
+a { text-decoration:none; }
+img { border:none; }
 br.clear { clear:both; }
 
 /*
  * 02 - Header
  * ----------------------------------------------*/
+div#header { width:1000px; float:left; }
+div#header div.name-project { width:180px; height:130px; padding:20px 0px 0px 20px; float:left; border-right:dotted 2px #C2BEA8; margin-top:20px; }
+div#header div.name-project h1 { font-size:30px;  color:#DF132D; text-shadow:0px 1px 1px #FFF; display:block; margin-bottom:5px; }
+div#header div.name-project a.rubygem { color:#666; font-size:16px; }
+div#header div.name-project a.rubygem:hover { text-decoration:underline; }
+div#header div.name-project p { display:block; margin-top:5px; }
+div#header div.name-project a.developed { color:#333; }
+div#header div.name-project a.developed:hover { text-decoration:underline; }
+div#header div.downloads { width:400px; float:right; }
+div#header div.downloads img { float:right; margin:30px 20px 0px 20px; }
+
