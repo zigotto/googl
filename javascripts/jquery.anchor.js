@@ -37,3 +37,9 @@ jQuery.fn.anchorAnimate = function(settings) {
 		})
 	})
 }
+
+  // External Links
+  $("a[rel=externo]").live('click', function() {
+    window.open(this.href);
+    return false;
+  });
