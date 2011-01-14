@@ -48,10 +48,18 @@ div#header div.downloads img { float:right; margin:30px 20px 0px 20px; }
 /*
  * 03 - Content
  * ----------------------------------------------*/
-div#content { width:1000px; float:left; }
+div#content { width:1000px; float:left; border-bottom:solid 1px #456; }
 div#content div.summary { width:230px; padding:0px 0px 30px 20px; float:left; border-right:dotted 1px #C2BEA8; border-top:dotted 1px #C2BEA8; border-bottom:dotted 1px #C2BEA8; }
 div#content div.summary h2 { font-size:20px; text-shadow:0px 1px 1px #FFF; display:block; margin:15px 0px 0px 0px; }
 div#content div.summary ul.list-nav { width:210px; margin:10px 0px 0px 20px; }
 div#content div.summary ul.list-nav li { width:200px; height:22px; padding:8px 0px 0px 10px; font-size:16px; border-bottom:dotted 1px #C2BEA8; }
 div#content div.summary ul.list-nav a { color:#333; }
 div#content div.summary ul.list-nav a:hover { text-decoration:underline; }
+div#content div.descriptions { width:687px; float:left; margin:0px 0px 30px 60px; background:#FFF; border:dotted 1px #C2BEA8; }
+div#content div.descriptions h1 { font-size:20px; display:block; color:#DF132D; font-weight:normal; margin:20px 0px 10px 20px; }
+div#content div.descriptions h2 { font-size:16px; display:block; color:#666; margin:10px 0px 10px 35px; }
+div#content div.descriptions p { display:block; margin:0px 20px 40px 35px; line-height:150%; font-size:14px; }
+div#content div.descriptions hr { width:250px; border:solid 1px #CCC; background:#CCC; margin:auto; }
+div#content div.descriptions pre {  width:570px; padding:20px 20px; border:solid 1px #DDD; background:#F9F9F9; margin:0px 0px 20px 35px; font-family:Helvetica, Arial, Verdana; font-size:14px; }
+div#content div.descriptions a { color:#333; font-weight:bold; }
+div#content div.descriptions a:hover { text-decoration:underline; }

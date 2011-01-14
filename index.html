@@ -58,19 +58,90 @@
             <a href="#" title="Authentication">+ Authentication</a>
           </li>
           <li>
-            <a href="#" title="OAuth">+ OAuth</a>
-          </li>
-           <li>
             <a href="#" title="Installation">+ Installation</a>
           </li>
           <li>
             <a href="#" title="License">+ License</a>
           </li>          
         </ul>
-
         <br class="clear" />
       </div>
       <!-- /sumary -->
+
+      <!-- descriptions -->
+      <div class="descriptions">
+        <h1>Readme</h1>
+        <h2>Googl</h2>
+        <p>
+          Google URL Shortener API in Ruby
+        </p>
+
+        <hr />
+
+        <h1>Basic Usage</h1>
+        <h2>Shorten a long URL</h2>
+        <p>
+          Google URL Shortener API in Ruby
+        </p>
+<pre>
+url = googl.shorten('http://www.zigotto.com')
+
+url.short_url
+=> "http://goo.gl/ump4s"
+
+url.long_url
+=> "http://www.zigotto.com/"
+
+url.qr_code
+=> "http://goo.gl/ump4s.qr"
+</pre>
+        <h2>Expand a short URL</h2>
+<pre>
+url = Googl.expand('http://goo.gl/ump4S')
+
+url.long_url
+=> "http://www.zigotto.com/"
+        </pre>
+        <hr />
+        <h1>Authentication</h1>
+        <p>
+          The Google URL Shortener API supports the OAuth and ClientLogin mechanisms for authenticating.
+
+          For shorten requests, each short URL for an authenticated user is unique, and thus will gather unique click statistics. In addition, it shows up on the user’s dashboard at <a href="http://goo.gl/" title="googl.gl">goo.gl</a>. 
+        </p>
+        <h2>ClientLogin</h2>
+<pre>
+client = Googl.client('user@gmail.com', 'my_valid_password')
+
+url = client.shorten('https://github.com/zigotto/googl')
+url.short_url
+=> http://goo.gl/DWDfi
+</pre>
+        <p>
+          Go to <a href="http://goo.gl" title="goo.gl">goo.gl</a> to see URL statistics. 
+        </p>
+        <h2>OAuth</h2>
+<pre>
+TODO
+</pre>
+        <hr />
+        <h1>Installation</h1>
+<pre>
+gem install googl
+</pre>        
+        <hr />
+        <h1>License</h1>
+        <p>
+          MIT License. Copyright 2011 Zigotto®. <a href="http://www.zigotto.com.br" title="www.zigoto.com.br">www.zigotto.com.br</a>
+        </p>
+
+          
+        
+        
+
+        <br class="clear" />
+      </div>
+      <!-- /descriptions -->
 
       <br class="clear" />
     </div>
