@@ -13,6 +13,8 @@
     <meta name="rating" content="general" />
     <link href="stylesheets/style.css" rel="stylesheet" type="text/css" />
     <link href="images/ico/ruby.ico" rel="shortcut icon" />
+    <script src="javascripts/jquery.js" type="text/javascript"></script>
+    <script src="javascripts/jquery.anchor.js" type="text/javascript"></script>
   </head>
   <body>
     <!-- link fork Github -->
@@ -49,19 +51,19 @@
         <h2>- Summary</h2>
         <ul class="list-nav">
           <li>
-            <a href="#" title="Readme">+ Readme</a>
+            <a href="#readme" title="Readme" class="anchorLink">+ Readme</a>
           </li>
           <li>
-            <a href="#" title="Basic Usage">+ Basic Usage</a>
+            <a href="#basicusage" title="Basic Usage" class="anchorLink">+ Basic Usage</a>
           </li>
           <li>
-            <a href="#" title="Authentication">+ Authentication</a>
+            <a href="#authentication" title="Authentication" class="anchorLink">+ Authentication</a>
           </li>
           <li>
-            <a href="#" title="Installation">+ Installation</a>
+            <a href="#installation" title="Installation" class="anchorLink">+ Installation</a>
           </li>
           <li>
-            <a href="#" title="License">+ License</a>
+            <a href="#licence" title="License" class="anchorLink">+ License</a>
           </li>          
         </ul>
         <br class="clear" />
@@ -70,14 +72,14 @@
 
       <!-- descriptions -->
       <div class="descriptions">
+        <a name="readme" id="readme"></a>        
         <h1>Readme</h1>
         <h2>Googl</h2>
         <p>
           Google URL Shortener API in Ruby
         </p>
-
         <hr />
-
+        <a name="basicusage" id="basicusage"></a>
         <h1>Basic Usage</h1>
         <h2>Shorten a long URL</h2>
         <p>
@@ -103,6 +105,7 @@ url.long_url
 => "http://www.zigotto.com/"
         </pre>
         <hr />
+        <a name="authentication" id="authentication"></a>        
         <h1>Authentication</h1>
         <p>
           The Google URL Shortener API supports the OAuth and ClientLogin mechanisms for authenticating.
@@ -125,11 +128,13 @@ url.short_url
 TODO
 </pre>
         <hr />
+        <a name="installation" id="installation"></a>        
         <h1>Installation</h1>
 <pre>
 gem install googl
 </pre>        
         <hr />
+        <a name="licence" id="licence"></a> 
         <h1>License</h1>
         <p>
           MIT License. Copyright 2011 Zigotto®. <a href="http://www.zigotto.com.br" title="www.zigoto.com.br">www.zigotto.com.br</a>

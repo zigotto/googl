@@ -48,7 +48,7 @@ div#header div.downloads img { float:right; margin:30px 20px 0px 20px; }
 /*
  * 03 - Content
  * ----------------------------------------------*/
-div#content { width:1000px; float:left; border-bottom:solid 1px #456; }
+div#content { width:1000px; float:left; }
 div#content div.summary { width:230px; padding:0px 0px 30px 20px; float:left; border-right:dotted 1px #C2BEA8; border-top:dotted 1px #C2BEA8; border-bottom:dotted 1px #C2BEA8; position:fixed; z-index:999; left:0; }
 div#content div.summary h2 { font-size:20px; text-shadow:0px 1px 1px #FFF; display:block; margin:15px 0px 0px 0px; }
 div#content div.summary ul.list-nav { width:210px; margin:10px 0px 0px 20px; }
