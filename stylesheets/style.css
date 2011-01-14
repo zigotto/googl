@@ -64,4 +64,6 @@ div#content div.descriptions a:hover { text-decoration:underline; }
 /*
  * 04 - Footer
  * ----------------------------------------------*/
-div#footer { width:1000px; padding:10px 0px; background:#FFF; float:left; margin:10px 0px; }
+div#footer { width:960px; padding:10px 20px; float:left; margin:10px 0px; text-align:right; }
+div#footer a { color:#333; }
+div#footer a:hover { text-decoration:underline; }
