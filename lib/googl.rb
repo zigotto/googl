@@ -1,10 +1,12 @@
 require 'httparty'
+require 'ostruct'
 
 require 'googl/base'
 require 'googl/request'
 require 'googl/shorten'
 require 'googl/expand'
 require 'googl/client_login'
+require 'googl/ruby_extensions'
 
 module Googl
 
@@ -12,8 +14,9 @@ module Googl
     Googl::Shorten.new(url)
   end
 
-  def self.expand(url)
-    Googl::Expand.new(url)
+  def self.expand(url, options={})
+    options = {:shortUrl => url, :projection => nil}.merge!(options)
+    Googl::Expand.new(options)
   end
 
   def self.client(email, passwd)

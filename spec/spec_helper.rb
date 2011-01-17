@@ -6,6 +6,8 @@ require "rspec"
 require 'webmock/rspec'
 require 'googl'
 
+require 'shared_examples'
+
 def load_fixture(name)
   File.new(File.join(File.expand_path(File.dirname(__FILE__)), '/fixtures', name))
 end
@@ -23,6 +25,18 @@ def fake_urls
   # Expand
   url_expand = "https://www.googleapis.com/urlshortener/v1/url?shortUrl=http://goo.gl/7lob"
   stub_request(:get, url_expand).to_return(load_fixture('expand.json'))
+  
+  # Expand with projection FULL
+  url_expand = "https://www.googleapis.com/urlshortener/v1/url?projection=full&shortUrl=http://goo.gl/DWDfi"
+  stub_request(:get, url_expand).to_return(load_fixture('expand_projection_full.json'))
+
+  # Expand with projection ANALYTICS_CLICKS
+  url_expand = "https://www.googleapis.com/urlshortener/v1/url?projection=analytics_clicks&shortUrl=http://goo.gl/DWDfi"
+  stub_request(:get, url_expand).to_return(load_fixture('expand_projection_clicks.json'))
+  
+  # Expand with projection ANALYTICS_TOP_STRINGS
+  url_expand = "https://www.googleapis.com/urlshortener/v1/url?projection=analytics_top_strings&shortUrl=http://goo.gl/DWDfi"
+  stub_request(:get, url_expand).to_return(load_fixture('expand_projection_strings.json'))
 
   # Authentication
   url_login = "https://www.google.com/accounts/ClientLogin"
@@ -44,5 +58,6 @@ def fake_urls
     with(:body => params, 
          :headers => {'Authorization'=>'GoogleLogin auth=DQAAAK8AAAC9ahL-o7g', 'Content-Type'=>'application/json'}).
          to_return(load_fixture('shorten_authenticated.json'))
+
 
 end

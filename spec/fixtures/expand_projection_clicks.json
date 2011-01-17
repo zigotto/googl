@@ -1,0 +1,40 @@
+HTTP/1.1 200 OK
+ETag: "EEZ1AD443JkEgW3KJFaymzTd26A/svhJppHIsa0kPz8H8zctbQSfo8o"
+Expires: Thu, 13 Jan 2011 22:34:57 GMT
+Date: Thu, 13 Jan 2011 22:34:57 GMT
+Cache-Control: public, max-age=0, must-revalidate, no-transform
+Content-Type: application/json; charset=UTF-8
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Server: GSE
+Transfer-Encoding: chunked
+
+{
+ "kind": "urlshortener#url",
+ "id": "http://goo.gl/DWDfi",
+ "longUrl": "https://github.com/zigotto/googl",
+ "status": "OK",
+ "analytics": {
+  "allTime": {
+   "shortUrlClicks": "19",
+   "longUrlClicks": "19"
+  },
+  "month": {
+   "shortUrlClicks": "19",
+   "longUrlClicks": "20"
+  },
+  "week": {
+   "shortUrlClicks": "21",
+   "longUrlClicks": "22"
+  },
+  "day": {
+   "shortUrlClicks": "23",
+   "longUrlClicks": "24"
+  },
+  "twoHours": {
+   "shortUrlClicks": "0",
+   "longUrlClicks": "0"
+  }
+ }
+}

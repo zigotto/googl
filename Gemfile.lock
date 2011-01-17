@@ -30,7 +30,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.0.0)
-  httparty (= 0.6.1)
+  httparty (>= 0.6.1)
   jeweler (~> 1.5.2)
   rcov
   rspec (~> 2.3.0)

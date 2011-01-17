@@ -1,0 +1,268 @@
+HTTP/1.1 200 OK
+ETag: "EEZ1AD443JkEgW3KJFaymzTd26A/PcG5hEUcxQRgLBwN0edzypLtI10"
+Expires: Thu, 13 Jan 2011 22:35:53 GMT
+Date: Thu, 13 Jan 2011 22:35:53 GMT
+Cache-Control: public, max-age=0, must-revalidate, no-transform
+Content-Type: application/json; charset=UTF-8
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Server: GSE
+Transfer-Encoding: chunked
+
+{
+ "kind": "urlshortener#url",
+ "id": "http://goo.gl/DWDfi",
+ "longUrl": "https://github.com/zigotto/googl",
+ "status": "OK",
+ "analytics": {
+  "allTime": {
+   "referrers": [
+    {
+     "count": "16",
+     "id": "Unknown/empty"
+    },
+    {
+     "count": "3",
+     "id": "twitter.com"
+    }
+   ],
+   "countries": [
+    {
+     "count": "18",
+     "id": "BR"
+    },
+    {
+     "count": "1",
+     "id": "NO"
+    }
+   ],
+   "browsers": [
+    {
+     "count": "11",
+     "id": "Chrome"
+    },
+    {
+     "count": "5",
+     "id": "Firefox"
+    },
+    {
+     "count": "2",
+     "id": "Safari"
+    },
+    {
+     "count": "1",
+     "id": "Mobile"
+    }
+   ],
+   "platforms": [
+    {
+     "count": "7",
+     "id": "Macintosh"
+    },
+    {
+     "count": "7",
+     "id": "Windows"
+    },
+    {
+     "count": "2",
+     "id": "Linux"
+    },
+    {
+     "count": "2",
+     "id": "Other Unix"
+    },
+    {
+     "count": "1",
+     "id": "iPhone"
+    }
+   ]
+  },
+  "month": {
+   "referrers": [
+    {
+     "count": "16",
+     "id": "Unknown/empty"
+    },
+    {
+     "count": "3",
+     "id": "twitter.com"
+    }
+   ],
+   "countries": [
+    {
+     "count": "18",
+     "id": "BR"
+    },
+    {
+     "count": "1",
+     "id": "NO"
+    }
+   ],
+   "browsers": [
+    {
+     "count": "11",
+     "id": "Chrome"
+    },
+    {
+     "count": "5",
+     "id": "Firefox"
+    },
+    {
+     "count": "2",
+     "id": "Safari"
+    },
+    {
+     "count": "1",
+     "id": "Mobile"
+    }
+   ],
+   "platforms": [
+    {
+     "count": "7",
+     "id": "Macintosh"
+    },
+    {
+     "count": "7",
+     "id": "Windows"
+    },
+    {
+     "count": "2",
+     "id": "Linux"
+    },
+    {
+     "count": "2",
+     "id": "Other Unix"
+    },
+    {
+     "count": "1",
+     "id": "iPhone"
+    }
+   ]
+  },
+  "week": {
+   "referrers": [
+    {
+     "count": "16",
+     "id": "Unknown/empty"
+    },
+    {
+     "count": "3",
+     "id": "twitter.com"
+    }
+   ],
+   "countries": [
+    {
+     "count": "18",
+     "id": "BR"
+    },
+    {
+     "count": "1",
+     "id": "NO"
+    }
+   ],
+   "browsers": [
+    {
+     "count": "11",
+     "id": "Chrome"
+    },
+    {
+     "count": "5",
+     "id": "Firefox"
+    },
+    {
+     "count": "2",
+     "id": "Safari"
+    },
+    {
+     "count": "1",
+     "id": "Mobile"
+    }
+   ],
+   "platforms": [
+    {
+     "count": "7",
+     "id": "Macintosh"
+    },
+    {
+     "count": "7",
+     "id": "Windows"
+    },
+    {
+     "count": "2",
+     "id": "Linux"
+    },
+    {
+     "count": "2",
+     "id": "Other Unix"
+    },
+    {
+     "count": "1",
+     "id": "iPhone"
+    }
+   ]
+  },
+  "day": {
+   "referrers": [
+    {
+     "count": "16",
+     "id": "Unknown/empty"
+    },
+    {
+     "count": "3",
+     "id": "twitter.com"
+    }
+   ],
+   "countries": [
+    {
+     "count": "18",
+     "id": "BR"
+    },
+    {
+     "count": "1",
+     "id": "NO"
+    }
+   ],
+   "browsers": [
+    {
+     "count": "11",
+     "id": "Chrome"
+    },
+    {
+     "count": "5",
+     "id": "Firefox"
+    },
+    {
+     "count": "2",
+     "id": "Safari"
+    },
+    {
+     "count": "1",
+     "id": "Mobile"
+    }
+   ],
+   "platforms": [
+    {
+     "count": "7",
+     "id": "Macintosh"
+    },
+    {
+     "count": "7",
+     "id": "Windows"
+    },
+    {
+     "count": "2",
+     "id": "Linux"
+    },
+    {
+     "count": "2",
+     "id": "Other Unix"
+    },
+    {
+     "count": "1",
+     "id": "iPhone"
+    }
+   ]
+  }
+ }
+}
