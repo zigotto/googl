@@ -4,7 +4,7 @@ module Googl
 
     API_URL = "https://www.googleapis.com/urlshortener/v1/url"
 
-    attr_accessor :long_url, :analytics
+    attr_accessor :long_url, :analytics, :status
 
     def initialize(options={})
 
@@ -14,8 +14,9 @@ module Googl
       if resp.code == 200
         @long_url   = resp['longUrl']
         @analytics  = resp['analytics'].to_openstruct if resp.has_key?('analytics')
+        @status     = resp['status']
       else
-        resp.response
+        raise Exception.new("#{resp.code} #{resp.message}")
       end
     end
 

@@ -14,12 +14,12 @@ module Googl
         @short_url  = resp['id']
         @long_url   = resp['longUrl']
       else
-        resp.response
+        raise Exception.new(resp.parsed_response)
       end
     end
 
     def qr_code
-      short_url + ".qr" if !short_url.blank?
+      "#{short_url}.qr" if !short_url.blank?
     end
 
   end

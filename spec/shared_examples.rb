@@ -14,14 +14,14 @@ shared_examples_for 'a period' do
 
   describe "#browsers" do
     it { element.should respond_to(:browsers) }
-    it { element.countries.first.should respond_to(:count) }
-    it { element.countries.first.should respond_to(:label) }
+    it { element.browsers.first.should respond_to(:count) }
+    it { element.browsers.first.should respond_to(:label) }
   end
 
   describe "#platforms" do
     it { element.should respond_to(:platforms) }
-    it { element.countries.first.should respond_to(:count) }
-    it { element.countries.first.should respond_to(:label) }
+    it { element.platforms.first.should respond_to(:count) }
+    it { element.platforms.first.should respond_to(:label) }
   end
 
 end

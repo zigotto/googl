@@ -26,10 +26,8 @@ describe Googl::ClientLogin do
 
       subject { Googl.client('my_invalid_gmail', 'my_invalid_passwod') }
 
-      describe "#code" do
-        it "should return 403" do
-          subject.code.should == 403
-        end
+      it "should return BadAuthentication" do
+        lambda { Googl.client('my_invalid_gmail', 'my_invalid_passwod') }.should raise_error(Exception, /403 Error=BadAuthentication/)
       end
       
     end

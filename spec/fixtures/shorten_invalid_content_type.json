@@ -1,0 +1,12 @@
+HTTP/1.1 400 Bad Request
+Content-Type: text/html; charset=UTF-8
+Date: Mon, 17 Jan 2011 20:35:55 GMT
+Expires: Mon, 17 Jan 2011 20:35:55 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Server: GSE
+Transfer-Encoding: chunked
+
+Unsupported content with type: application/x-www-form-urlencoded

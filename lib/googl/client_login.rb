@@ -16,7 +16,7 @@ module Googl
         token = resp.split('=').last.gsub(/\n/, '')
         modify_headers("Authorization" => "GoogleLogin auth=#{token}")
       else
-        resp.response
+        raise Exception.new("#{resp.code} #{resp.parsed_response}")
       end
     end
 

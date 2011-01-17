@@ -22,6 +22,13 @@ def fake_urls
          :headers => {'Content-Type'=>'application/json'}).
          to_return(load_fixture('shorten.json'))
 
+  # Shorten Unsupported content with type
+  url_shorten = "https://www.googleapis.com/urlshortener/v1/url"
+  params = {"longUrl" => "http://www.uol.com"}.inspect
+  stub_request(:post, url_shorten).
+    with(:body => params).
+         to_return(load_fixture('shorten_invalid_content_type.json'))
+
   # Expand
   url_expand = "https://www.googleapis.com/urlshortener/v1/url?shortUrl=http://goo.gl/7lob"
   stub_request(:get, url_expand).to_return(load_fixture('expand.json'))
@@ -37,6 +44,14 @@ def fake_urls
   # Expand with projection ANALYTICS_TOP_STRINGS
   url_expand = "https://www.googleapis.com/urlshortener/v1/url?projection=analytics_top_strings&shortUrl=http://goo.gl/DWDfi"
   stub_request(:get, url_expand).to_return(load_fixture('expand_projection_strings.json'))
+  
+  # Expand error 404
+  url_expand = "https://www.googleapis.com/urlshortener/v1/url?shortUrl=http://goo.gl/blajjddkksijj"
+  stub_request(:get, url_expand).to_return(load_fixture('expand_404.json'))
+  
+  # Expand REMOVED
+  url_expand = "https://www.googleapis.com/urlshortener/v1/url?shortUrl=http://goo.gl/R7f68"
+  stub_request(:get, url_expand).to_return(load_fixture('expand_removed.json'))
 
   # Authentication
   url_login = "https://www.google.com/accounts/ClientLogin"
@@ -58,6 +73,5 @@ def fake_urls
     with(:body => params, 
          :headers => {'Authorization'=>'GoogleLogin auth=DQAAAK8AAAC9ahL-o7g', 'Content-Type'=>'application/json'}).
          to_return(load_fixture('shorten_authenticated.json'))
-
 
 end

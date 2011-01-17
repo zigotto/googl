@@ -10,24 +10,41 @@ describe Googl::Shorten do
 
     it { Googl.should respond_to(:shorten) }
 
-    subject { Googl.shorten('http://www.zigotto.com') }
+    context "with invalid url" do
 
-    describe "#short_url" do
-      it "should return a short URL" do
-        subject.short_url.should == 'http://goo.gl/ump4S'
+      it "should return error for required url" do
+        lambda { Googl.shorten }.should raise_error(ArgumentError, "URL to shorten is required")
       end
+
+      it "should return Unsupported content with type" do
+        Request.headers.delete('Content-Type')
+        lambda { Googl.shorten('http://www.uol.com') }.should raise_error(Exception, /Unsupported content with type: application\/x-www-form-urlencoded/)
+      end
+      
     end
 
-    describe "#long_url" do
-      it "should return a long url" do
-        subject.long_url.should == 'http://www.zigotto.com/'
-      end
-    end
+    context "with valid url" do
 
-    describe "#qr_code" do
-      it "should return a url for generate a qr code" do
-        subject.qr_code.should == 'http://goo.gl/ump4S.qr'
+      subject { Googl.shorten('http://www.zigotto.com') }
+
+      describe "#short_url" do
+        it "should return a short URL" do
+          subject.short_url.should == 'http://goo.gl/ump4S'
+        end
       end
+
+      describe "#long_url" do
+        it "should return a long url" do
+          subject.long_url.should == 'http://www.zigotto.com/'
+        end
+      end
+
+      describe "#qr_code" do
+        it "should return a url for generate a qr code" do
+          subject.qr_code.should == 'http://goo.gl/ump4S.qr'
+        end
+      end
+
     end
 
   end
