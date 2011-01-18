@@ -1,6 +1,6 @@
 module Googl
 
-  class Base
+  class Base # :nodoc:
 
     private
 

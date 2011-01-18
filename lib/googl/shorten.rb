@@ -6,6 +6,8 @@ module Googl
 
     attr_accessor :short_url, :long_url
 
+    # Creates a new short URL, see Googl.shorten
+    #
     def initialize(long_url)
       modify_headers('Content-Type' => 'application/json')
       options = {"longUrl" => long_url}.inspect
@@ -18,6 +20,16 @@ module Googl
       end
     end
 
+    # URL for QR Code
+    #
+    #   url = Googl.shorten('http://goo.gl/ump4S')
+    #   ur.qr_code
+    #   => http://goo.gl/ump4S.qr
+    #
+    # Usage:
+    #
+    #   <img src="http://goo.gl/ump4S.qr" />
+    #
     def qr_code
       "#{short_url}.qr" if !short_url.blank?
     end

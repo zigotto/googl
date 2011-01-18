@@ -1,3 +1,3 @@
-class Request
+class Request # :nodoc:
   include HTTParty
 end

@@ -44,6 +44,63 @@ Go to http://goo.gl to see URL statistics.
 
   TODO
 
+== Analytics
+
+Expands a short URL or gets creation time and analytics
+
+For analytics and additional information to return (using the :projection parameter)
+
+  :full                    returns the creation timestamp and all available analytics
+  :analytics_clicks        returns only click counts
+  :analytics_top_strings   returns only top string counts (e.g. referrers, countries, etc)
+
+=== Get Analytics
+  
+  url = Googl.expand('http://goo.gl/DWDfi', :projection => :full)
+
+  url.analytics.all_time.browsers.first.label
+  => "Chrome"
+  url.analytics.all_time.browsers.first.count
+  => "11"
+
+A summary of the click analytics for the short and long URL
+
+  url.analytics
+
+Analytics details for a particular window of time; counts in this object are of clicks that occurred within the most recent window of this length.
+  
+  url.analytics.all_time
+  url.analytics.month
+  url.analytics.week
+  url.analytics.day
+  url.analytics.two_hours
+  
+Number of clicks on this short URL. Replace (*) for all_time, month, week, day or two_hours
+  
+  url.analytics.*.short_url_clicks
+  
+Number of clicks on all goo.gl short URLs pointing to this long URL.
+  
+  url.analytics.*.long_url_clicks
+  
+Top referring hosts, e.g. "www.google.com"; sorted by (descending) click counts. Only present if this data is available.
+  
+  url.analytics.*.referrers
+  
+Top countries (expressed as country codes), e.g. "US" or "DE"; sorted by (descending) click counts.
+  
+  url.analytics.*.countries
+  
+Top browsers, e.g. "Chrome"; sorted by (descending) click counts.
+  
+  url.analytics.*.browsers
+  
+Top platforms or OSes, e.g. "Windows"; sorted by (descending) click counts.
+  
+  url.analytics.*.platforms
+  
+For details, see http://code.google.com/intl/pt-BR/apis/urlshortener/v1/reference.html#resource_url
+
 == Installation
 
   gem install googl

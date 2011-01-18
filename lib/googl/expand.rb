@@ -6,6 +6,8 @@ module Googl
 
     attr_accessor :long_url, :analytics, :status
 
+    # Expands a short URL or gets creation time and analytics. See Googl.expand
+    #
     def initialize(options={})
 
       options.delete_if {|key, value| value.nil?}
