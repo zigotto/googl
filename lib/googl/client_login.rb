@@ -29,7 +29,21 @@ module Googl
       Googl::Shorten.new(url)
     end
 
-    # Gets a user's history of shortened URLs
+    # Gets a user's history of shortened URLs. (Authenticated)
+    #
+    #   client = Googl.client('user@gmail.com', 'my_valid_password')
+    #
+    #   history = client.history
+    #   history.total_items
+    #   => 19
+    #
+    # A list of URL.
+    #
+    #   history.items
+    #
+    # Analytics details for all items
+    #
+    #   history = client.history(:projection => :analytics_clicks)
     #
     def history(options={})
       resp = options.blank? ? Request.get(API_HISTORY_URL) : Request.get(API_HISTORY_URL, :query => options)

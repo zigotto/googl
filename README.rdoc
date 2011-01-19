@@ -17,6 +17,9 @@ Google URL Shortener API in Ruby
   url.qr_code
   => "http://goo.gl/ump4S.qr"
 
+  url.info
+  => "http://goo.gl/ump4S.info"
+
 === Expand a short URL
 
   url = Googl.expand('http://goo.gl/ump4S')
@@ -100,6 +103,24 @@ Top platforms or OSes, e.g. "Windows"; sorted by (descending) click counts.
   url.analytics.*.platforms
   
 For details, see http://code.google.com/intl/pt-BR/apis/urlshortener/v1/reference.html#resource_url
+
+== History
+
+Gets a user's history of shortened URLs. (Authenticated)
+
+  client = Googl.client('user@gmail.com', 'my_valid_password')
+
+  history = client.history
+  history.total_items
+  => 19
+
+A list of URL.
+
+  history.items
+
+Analytics details for all items
+
+  history = client.history(:projection => :analytics_clicks)
 
 == Installation
 
