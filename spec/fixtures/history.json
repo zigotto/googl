@@ -1,0 +1,152 @@
+HTTP/1.1 200 OK
+ETag: "EEZ1AD443JkEgW3KJFaymzTd26A/0Nsa5rkDJGqkjbl2cYt7w_X1fNY"
+Expires: Tue, 18 Jan 2011 22:27:13 GMT
+Date: Tue, 18 Jan 2011 22:27:13 GMT
+Cache-Control: private, max-age=0, must-revalidate, no-transform
+Content-Type: application/json; charset=UTF-8
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Server: GSE
+Transfer-Encoding: chunked
+
+{
+ "kind": "urlshortener#urlHistory",
+ "totalItems": 19,
+ "itemsPerPage": 30,
+ "items": [
+  {
+   "kind": "urlshortener#url",
+   "id": "http://goo.gl/Ue8sQ",
+   "longUrl": "http://facebook.com/",
+   "status": "OK",
+   "created": "2011-01-13T21:39:17.271+00:00"
+  },
+  {
+   "kind": "urlshortener#url",
+   "id": "http://goo.gl/Si1FH",
+   "longUrl": "http://globo.com/",
+   "status": "OK",
+   "created": "2011-01-13T18:35:57.146+00:00"
+  },
+  {
+   "kind": "urlshortener#url",
+   "id": "http://goo.gl/YdbC7",
+   "longUrl": "http://valeideia.com.br/",
+   "status": "OK",
+   "created": "2011-01-13T18:29:57.086+00:00"
+  },
+  {
+   "kind": "urlshortener#url",
+   "id": "http://goo.gl/EYwdh",
+   "longUrl": "http://www.zigotto.net/",
+   "status": "OK",
+   "created": "2011-01-13T18:04:50.387+00:00"
+  },
+  {
+   "kind": "urlshortener#url",
+   "id": "http://goo.gl/AT2BW",
+   "longUrl": "http://www.zigotto.net/",
+   "status": "OK",
+   "created": "2011-01-13T14:52:30.401+00:00"
+  },
+  {
+   "kind": "urlshortener#url",
+   "id": "http://goo.gl/Ju6Bn",
+   "longUrl": "http://www.zigotto.net/",
+   "status": "OK",
+   "created": "2011-01-13T13:43:10.197+00:00"
+  },
+  {
+   "kind": "urlshortener#url",
+   "id": "http://goo.gl/4JIf6",
+   "longUrl": "http://euheueuhe.net/",
+   "status": "OK",
+   "created": "2011-01-13T13:39:43.335+00:00"
+  },
+  {
+   "kind": "urlshortener#url",
+   "id": "http://goo.gl/7w7QL",
+   "longUrl": "http://uol.com.br/",
+   "status": "OK",
+   "created": "2011-01-13T13:38:31.442+00:00"
+  },
+  {
+   "kind": "urlshortener#url",
+   "id": "http://goo.gl/NUydr",
+   "longUrl": "http://www.zigotto.net/",
+   "status": "OK",
+   "created": "2011-01-13T13:36:50.013+00:00"
+  },
+  {
+   "kind": "urlshortener#url",
+   "id": "http://goo.gl/OoQrm",
+   "longUrl": "http://www.zigotto.net/",
+   "status": "OK",
+   "created": "2011-01-13T13:30:35.533+00:00"
+  },
+  {
+   "kind": "urlshortener#url",
+   "id": "http://goo.gl/r3Rtx",
+   "longUrl": "http://www.zigotto.net/",
+   "status": "OK",
+   "created": "2011-01-13T13:17:12.163+00:00"
+  },
+  {
+   "kind": "urlshortener#url",
+   "id": "http://goo.gl/KyVNi",
+   "longUrl": "http://www.zigotto.net/",
+   "status": "OK",
+   "created": "2011-01-13T13:14:26.260+00:00"
+  },
+  {
+   "kind": "urlshortener#url",
+   "id": "http://goo.gl/R3mYj",
+   "longUrl": "http://www.zigotto.net/",
+   "status": "OK",
+   "created": "2011-01-13T13:07:26.670+00:00"
+  },
+  {
+   "kind": "urlshortener#url",
+   "id": "http://goo.gl/DWDfi",
+   "longUrl": "https://github.com/zigotto/googl",
+   "status": "OK",
+   "created": "2011-01-13T03:48:10.309+00:00"
+  },
+  {
+   "kind": "urlshortener#url",
+   "id": "http://goo.gl/bQlzC",
+   "longUrl": "http://www.zigotto.com/",
+   "status": "OK",
+   "created": "2011-01-13T03:46:45.726+00:00"
+  },
+  {
+   "kind": "urlshortener#url",
+   "id": "http://goo.gl/DyrZA",
+   "longUrl": "http://www.zigotto.com/",
+   "status": "OK",
+   "created": "2011-01-13T03:45:13.289+00:00"
+  },
+  {
+   "kind": "urlshortener#url",
+   "id": "http://goo.gl/79b6R",
+   "longUrl": "http://www.zigotto.com.br/",
+   "status": "OK",
+   "created": "2011-01-13T02:53:38.731+00:00"
+  },
+  {
+   "kind": "urlshortener#url",
+   "id": "http://goo.gl/iKGy3",
+   "longUrl": "http://jlopes.me/",
+   "status": "OK",
+   "created": "2011-01-11T17:31:43.697+00:00"
+  },
+  {
+   "kind": "urlshortener#url",
+   "id": "http://goo.gl/7lob",
+   "longUrl": "http://jlopes.zigotto.com.br/",
+   "status": "OK",
+   "created": "2010-10-01T13:26:04.029+00:00"
+  }
+ ]
+}

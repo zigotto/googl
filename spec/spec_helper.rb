@@ -74,4 +74,14 @@ def fake_urls
          :headers => {'Authorization'=>'GoogleLogin auth=DQAAAK8AAAC9ahL-o7g', 'Content-Type'=>'application/json'}).
          to_return(load_fixture('shorten_authenticated.json'))
 
+  # History
+  stub_request(:get, "https://www.googleapis.com/urlshortener/v1/url/history").
+    with(:headers => {'Authorization'=>'GoogleLogin auth=DQAAAK8AAAC9ahL-o7g'}).
+         to_return(load_fixture('history.json'))
+
+  # History with projection ANALYTICS_CLICKS
+  stub_request(:get, "https://www.googleapis.com/urlshortener/v1/url/history?projection=analytics_clicks").
+    with(:headers => {'Authorization'=>'GoogleLogin auth=DQAAAK8AAAC9ahL-o7g'}).
+         to_return(load_fixture('history_projection_clicks.json'))
+
 end
