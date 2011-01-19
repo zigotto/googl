@@ -1,10 +1,10 @@
 module Googl
 
-  class Expand
+  class Expand < Base
 
     API_URL = "https://www.googleapis.com/urlshortener/v1/url"
 
-    attr_accessor :long_url, :analytics, :status
+    attr_accessor :long_url, :analytics, :status, :short_url
 
     # Expands a short URL or gets creation time and analytics. See Googl.expand
     #
@@ -17,6 +17,7 @@ module Googl
         @long_url   = resp['longUrl']
         @analytics  = resp['analytics'].to_openstruct if resp.has_key?('analytics')
         @status     = resp['status']
+        @short_url  = resp['id']
       else
         raise Exception.new("#{resp.code} #{resp.message}")
       end

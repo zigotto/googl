@@ -42,6 +42,18 @@ describe Googl::Expand do
         end
       end
 
+      describe "#qr_code" do
+        it "should return a url for generate a qr code" do
+          subject.qr_code.should == 'http://goo.gl/7lob.qr'
+        end
+      end
+
+      describe "#info" do
+        it "should return url for analytics" do
+          subject.info.should == 'http://goo.gl/7lob.info'
+        end
+      end
+
       context "with projection" do
 
         context "full" do

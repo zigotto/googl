@@ -20,20 +20,6 @@ module Googl
       end
     end
 
-    # URL for QR Code
-    #
-    #   url = Googl.shorten('http://goo.gl/ump4S')
-    #   ur.qr_code
-    #   => http://goo.gl/ump4S.qr
-    #
-    # Usage:
-    #
-    #   <img src="http://goo.gl/ump4S.qr" />
-    #
-    def qr_code
-      "#{short_url}.qr" if !short_url.blank?
-    end
-
   end
 
 end

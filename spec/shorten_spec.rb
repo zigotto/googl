@@ -45,6 +45,12 @@ describe Googl::Shorten do
         end
       end
 
+      describe "#info" do
+        it "should return url for analytics" do
+          subject.info.should == 'http://goo.gl/ump4S.info'
+        end
+      end
+
     end
 
   end
