@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{googl}
-  s.version = "0.3.0"
+  s.version = "0.4.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jesus Lopes"]
-  s.date = %q{2011-01-17}
+  s.date = %q{2011-01-19}
   s.description = %q{Small library for Google URL Shortener API}
   s.email = %q{jlopes@zigotto.com.br}
   s.extra_rdoc_files = [
@@ -40,6 +40,8 @@ Gem::Specification.new do |s|
     "spec/fixtures/expand_projection_full.json",
     "spec/fixtures/expand_projection_strings.json",
     "spec/fixtures/expand_removed.json",
+    "spec/fixtures/history.json",
+    "spec/fixtures/history_projection_clicks.json",
     "spec/fixtures/shorten.json",
     "spec/fixtures/shorten_authenticated.json",
     "spec/fixtures/shorten_invalid_content_type.json",
