@@ -1,5 +1,6 @@
 require 'httparty'
 require 'ostruct'
+require 'json'
 
 require 'googl/base'
 require 'googl/request'

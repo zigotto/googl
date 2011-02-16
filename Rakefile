@@ -19,9 +19,7 @@ Jeweler::Tasks.new do |gem|
   gem.description = %Q{Small library for Google URL Shortener API}
   gem.email = "jlopes@zigotto.com.br"
   gem.authors = ["Jesus Lopes"]
-  # Include your dependencies below. Runtime dependencies are required when using your gem,
-  # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
-  gem.add_dependency "httparty", ">= 0.6.1"
+  # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
 

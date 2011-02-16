@@ -16,7 +16,7 @@ def fake_urls
 
   # Shorten
   url_shorten = "https://www.googleapis.com/urlshortener/v1/url"
-  params = {"longUrl" => "http://www.zigotto.com"}.inspect
+  params = "{\"longUrl\":\"http://www.zigotto.com\"}" #json
   stub_request(:post, url_shorten).
     with(:body => params,
          :headers => {'Content-Type'=>'application/json'}).
@@ -24,7 +24,7 @@ def fake_urls
 
   # Shorten Unsupported content with type
   url_shorten = "https://www.googleapis.com/urlshortener/v1/url"
-  params = {"longUrl" => "http://www.uol.com"}.inspect
+  params = "{\"longUrl\":\"http://www.uol.com\"}" #json
   stub_request(:post, url_shorten).
     with(:body => params).
          to_return(load_fixture('shorten_invalid_content_type.json'))
@@ -68,7 +68,7 @@ def fake_urls
   stub_request(:post, url_login).with(:body => params).to_return(load_fixture('client_login_invalid.json'))
 
   # Shorten authenticated
-  params = {"longUrl" => "http://www.zigotto.net"}.inspect
+  params = "{\"longUrl\":\"http://www.zigotto.net\"}"
   stub_request(:post, url_shorten).
     with(:body => params, 
          :headers => {'Authorization'=>'GoogleLogin auth=DQAAAK8AAAC9ahL-o7g', 'Content-Type'=>'application/json'}).

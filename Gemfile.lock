@@ -5,12 +5,13 @@ GEM
     crack (0.1.8)
     diff-lcs (1.1.2)
     git (1.2.5)
-    httparty (0.6.1)
+    httparty (0.7.4)
       crack (= 0.1.8)
     jeweler (1.5.2)
       bundler (~> 1.0.0)
       git (>= 1.2.5)
       rake
+    json (1.5.1)
     rake (0.8.7)
     rcov (0.9.9)
     rspec (2.3.0)
@@ -32,6 +33,7 @@ DEPENDENCIES
   bundler (~> 1.0.0)
   httparty (>= 0.6.1)
   jeweler (~> 1.5.2)
+  json (= 1.5.1)
   rcov
   rspec (~> 2.3.0)
   webmock (~> 1.6.2)

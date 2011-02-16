@@ -10,7 +10,7 @@ module Googl
     #
     def initialize(long_url)
       modify_headers('Content-Type' => 'application/json')
-      options = {"longUrl" => long_url}.inspect
+      options = {"longUrl" => long_url}.to_json
       resp = Request.post(API_URL, :body => options)
       if resp.code == 200
         @short_url  = resp['id']
