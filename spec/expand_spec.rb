@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Googl::Expand do
 
   before :each do
-    fake_urls
+    fake_urls? true
   end
 
   context "when expand any goo.gl short URL" do

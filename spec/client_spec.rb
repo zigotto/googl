@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Googl::ClientLogin do
 
   before :each do
-    fake_urls
+    fake_urls? true
   end
 
   context "request a new client login" do

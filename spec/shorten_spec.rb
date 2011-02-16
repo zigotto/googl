@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Googl::Shorten do
 
   before :each do
-    fake_urls
+    fake_urls? true
   end
 
   context "when request new short url" do
