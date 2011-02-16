@@ -1,7 +1,7 @@
 source "http://rubygems.org"
 
 gem "httparty", ">= 0.6.1"
-gem "json", "1.5.1"
+gem "json", ">= 1.5.1"
 
 group :development do
   gem "rspec", "~> 2.3.0"
