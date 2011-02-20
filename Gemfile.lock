@@ -33,7 +33,7 @@ DEPENDENCIES
   bundler (~> 1.0.0)
   httparty (>= 0.6.1)
   jeweler (~> 1.5.2)
-  json (>= 1.5.1)
+  json (>= 1.4.6)
   rcov
   rspec (~> 2.3.0)
   webmock (~> 1.6.2)
