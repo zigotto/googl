@@ -17,7 +17,7 @@ describe Googl::Shorten do
       end
 
       it "should return Unsupported content with type" do
-        Request.headers.delete('Content-Type')
+        Googl::Request.headers.delete('Content-Type')
         lambda { Googl.shorten('http://www.uol.com') }.should raise_error(Exception, /Unsupported content with type: application\/x-www-form-urlencoded/)
       end
       

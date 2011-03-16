@@ -29,7 +29,7 @@ module Googl
     private
 
     def modify_headers(item)
-      Request.headers.merge!(item)
+      Googl::Request.headers.merge!(item)
     end
 
   end

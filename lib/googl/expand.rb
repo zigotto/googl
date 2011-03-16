@@ -12,7 +12,7 @@ module Googl
 
       options.delete_if {|key, value| value.nil?}
 
-      resp = Request.get(API_URL, :query => options)
+      resp = Googl::Request.get(API_URL, :query => options)
       if resp.code == 200
         @long_url   = resp['longUrl']
         @analytics  = resp['analytics'].to_openstruct if resp.has_key?('analytics')

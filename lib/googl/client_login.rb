@@ -11,7 +11,7 @@ module Googl
     #
     def initialize(email, passwd)
       modify_headers('Content-Type' => 'application/x-www-form-urlencoded')
-      resp = Request.post(API_URL, :body => params.merge!('Email' => email, 'Passwd' => passwd))
+      resp = Googl::Request.post(API_URL, :body => params.merge!('Email' => email, 'Passwd' => passwd))
       @code = resp.code
       if resp.code == 200
         token = resp.split('=').last.gsub(/\n/, '')
@@ -46,7 +46,7 @@ module Googl
     #   history = client.history(:projection => :analytics_clicks)
     #
     def history(options={})
-      resp = options.blank? ? Request.get(API_HISTORY_URL) : Request.get(API_HISTORY_URL, :query => options)
+      resp = options.blank? ? Googl::Request.get(API_HISTORY_URL) : Googl::Request.get(API_HISTORY_URL, :query => options)
       if resp.code == 200
         @items = resp.parsed_response.to_openstruct
       else
