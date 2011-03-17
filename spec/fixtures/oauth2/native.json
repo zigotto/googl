@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+Content-Type: application/json
+Date: Thu, 17 Mar 2011 02:45:33 GMT
+Expires: Thu, 17 Mar 2011 02:45:33 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Server: GSE
+Transfer-Encoding: chunked
+
+{"access_token":"1/YCzoGAYT8XUuOifjNh_KqA","expires_in":3600,"refresh_token":"1/x_31GvgzdgHDMkRep5i8YxFlq76w3yjFu9Dp72Op-pI"}

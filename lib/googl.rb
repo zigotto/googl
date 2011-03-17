@@ -9,6 +9,8 @@ require 'googl/expand'
 require 'googl/client_login'
 require 'googl/ruby_extensions'
 
+require 'googl/oauth2/native'
+
 module Googl
 
   # Creates a new short URL

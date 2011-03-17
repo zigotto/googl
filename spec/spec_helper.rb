@@ -84,6 +84,19 @@ def fake_urls?(status)
     stub_request(:get, "https://www.googleapis.com/urlshortener/v1/url/history?projection=analytics_clicks").
       with(:headers => {'Authorization'=>'GoogleLogin auth=DQAAAK8AAAC9ahL-o7g'}).
       to_return(load_fixture('history_projection_clicks.json'))
+
+    # OAuth 2.0 for native applications
+    stub_request(:post, "https://accounts.google.com/o/oauth2/token").
+      with(:body => "code=4/SuSud6RqPojUXsPpeh-wSVCwnmTQ&client_id=185706845724.apps.googleusercontent.com&client_secret=DrBLCdCQ3gOybHrj7TPz/B0N&redirect_uri=urn:ietf:wg:oauth:2.0:oob&grant_type=authorization_code", 
+           :headers => {'Content-Type'=>'application/x-www-form-urlencoded'}).
+           to_return(load_fixture('oauth2/native.json'))    
+    
+    # OAuth 2.0 for native applications (invalid token)
+    stub_request(:post, "https://accounts.google.com/o/oauth2/token").
+      with(:body => "code=my_invalid_code&client_id=185706845724.apps.googleusercontent.com&client_secret=DrBLCdCQ3gOybHrj7TPz/B0N&redirect_uri=urn:ietf:wg:oauth:2.0:oob&grant_type=authorization_code", 
+           :headers => {'Content-Type'=>'application/x-www-form-urlencoded'}).
+           to_return(load_fixture('oauth2/native_invalid.json'))    
+
   else
     WebMock.allow_net_connect!
   end

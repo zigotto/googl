@@ -1,0 +1,12 @@
+HTTP/1.1 400 Bad Request
+Content-Type: application/json
+Date: Thu, 17 Mar 2011 03:05:33 GMT
+Expires: Thu, 17 Mar 2011 03:05:33 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Server: GSE
+Transfer-Encoding: chunked
+
+{"error":"invalid_token"}
