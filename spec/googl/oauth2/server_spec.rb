@@ -34,6 +34,22 @@ describe Googl::OAuth2::Server do
       subject.authorize_url.should == "https://accounts.google.com/o/oauth2/auth?client_id=438834493660.apps.googleusercontent.com&redirect_uri=http://gooogl.heroku.com/back&scope=https://www.googleapis.com/auth/urlshortener&response_type=code"
     end
 
+    it "should include the client_id" do
+      subject.authorize_url.should be_include("client_id=438834493660.apps.googleusercontent.com")
+    end
+
+    it "should include the redirect_uri" do
+      subject.authorize_url.should be_include("redirect_uri=http://gooogl.heroku.com/back")
+    end
+
+    it "should include the scope" do
+      subject.authorize_url.should be_include("scope=https://www.googleapis.com/auth/urlshortener")
+    end
+
+    it "should include the response_type" do
+      subject.authorize_url.should be_include("response_type=code")
+    end
+
   end
 
   describe "#request_access_token" do
