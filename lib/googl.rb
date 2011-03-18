@@ -11,6 +11,7 @@ require 'googl/client_login'
 require 'googl/ruby_extensions'
 
 require 'googl/oauth2/native'
+require 'googl/oauth2/server'
 
 module Googl
 

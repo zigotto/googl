@@ -7,6 +7,8 @@ module Googl
     API_CLIENT_LOGIN_URL = "https://www.google.com/accounts/ClientLogin"
     SCOPE_URL            = "https://www.googleapis.com/auth/urlshortener"
 
+    private
+
     def modify_headers(item)
       Googl::Request.headers.merge!(item)
     end

@@ -97,6 +97,18 @@ def fake_urls?(status)
            :headers => {'Content-Type'=>'application/x-www-form-urlencoded'}).
            to_return(load_fixture('oauth2/native_invalid.json'))    
 
+    # OAuth 2.0 for server-side web applications
+    stub_request(:post, "https://accounts.google.com/o/oauth2/token").
+      with(:body => "code=4/z43CZpNmqd0IO3dR1Y_ouase13CH&client_id=438834493660.apps.googleusercontent.com&client_secret=8i4iJJkFTukWhNpxTU1b2Zhi&redirect_uri=http://gooogl.heroku.com/back&grant_type=authorization_code", 
+           :headers => {'Content-Type'=>'application/x-www-form-urlencoded'}).
+           to_return(load_fixture('oauth2/server.json'))
+
+    # OAuth 2.0 for server-side web applications (invalid token)
+    stub_request(:post, "https://accounts.google.com/o/oauth2/token").
+      with(:body => "code=my_invalid_code&client_id=438834493660.apps.googleusercontent.com&client_secret=8i4iJJkFTukWhNpxTU1b2Zhi&redirect_uri=http://gooogl.heroku.com/back&grant_type=authorization_code", 
+           :headers => {'Content-Type'=>'application/x-www-form-urlencoded'}).
+           to_return(load_fixture('oauth2/server_invalid.json'))
+
   else
     WebMock.allow_net_connect!
   end
