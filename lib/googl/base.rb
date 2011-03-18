@@ -26,12 +26,6 @@ module Googl
       "#{short_url}.info"
     end
 
-    private
-
-    def modify_headers(item)
-      Googl::Request.headers.merge!(item)
-    end
-
   end
 
 end

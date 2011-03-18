@@ -2,7 +2,7 @@ module Googl
 
   class Expand < Base
 
-    API_URL = "https://www.googleapis.com/urlshortener/v1/url"
+    include Googl::Utils
 
     attr_accessor :long_url, :analytics, :status, :short_url
 
@@ -12,14 +12,14 @@ module Googl
 
       options.delete_if {|key, value| value.nil?}
 
-      resp = Googl::Request.get(API_URL, :query => options)
+      resp = get(API_URL, :query => options)
       if resp.code == 200
-        @long_url   = resp['longUrl']
-        @analytics  = resp['analytics'].to_openstruct if resp.has_key?('analytics')
-        @status     = resp['status']
-        @short_url  = resp['id']
+        self.long_url   = resp['longUrl']
+        self.analytics  = resp['analytics'].to_openstruct if resp.has_key?('analytics')
+        self.status     = resp['status']
+        self.short_url  = resp['id']
       else
-        raise Exception.new("#{resp.code} #{resp.message}")
+        raise exception("#{resp.code} #{resp.message}")
       end
     end
 

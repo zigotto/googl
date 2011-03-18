@@ -2,8 +2,7 @@ module Googl
 
   class ClientLogin < Base
 
-    API_URL         = "https://www.google.com/accounts/ClientLogin"
-    API_HISTORY_URL = "https://www.googleapis.com/urlshortener/v1/url/history"
+    include Googl::Utils
 
     attr_accessor :code, :items
 
@@ -11,13 +10,13 @@ module Googl
     #
     def initialize(email, passwd)
       modify_headers('Content-Type' => 'application/x-www-form-urlencoded')
-      resp = Googl::Request.post(API_URL, :body => params.merge!('Email' => email, 'Passwd' => passwd))
-      @code = resp.code
+      resp = post(API_CLIENT_LOGIN_URL, :body => params.merge!('Email' => email, 'Passwd' => passwd))
+      self.code = resp.code
       if resp.code == 200
         token = resp.split('=').last.gsub(/\n/, '')
         modify_headers("Authorization" => "GoogleLogin auth=#{token}")
       else
-        raise Exception.new("#{resp.code} #{resp.parsed_response}")
+        raise exception("#{resp.code} #{resp.parsed_response}")
       end
     end
 
@@ -26,7 +25,7 @@ module Googl
     # See Googl.client
     #
     def shorten(url)
-      Googl::Shorten.new(url)
+      Googl.shorten(url)
     end
 
     # Gets a user's history of shortened URLs. (Authenticated)
@@ -46,11 +45,11 @@ module Googl
     #   history = client.history(:projection => :analytics_clicks)
     #
     def history(options={})
-      resp = options.blank? ? Googl::Request.get(API_HISTORY_URL) : Googl::Request.get(API_HISTORY_URL, :query => options)
+      resp = options.blank? ? get(API_HISTORY_URL) : get(API_HISTORY_URL, :query => options)
       if resp.code == 200
-        @items = resp.parsed_response.to_openstruct
+        self.items = resp.parsed_response.to_openstruct
       else
-        raise Exception.new("#{resp.code} #{resp.parsed_response}")
+        raise exception("#{resp.code} #{resp.parsed_response}")
       end
     end
 
