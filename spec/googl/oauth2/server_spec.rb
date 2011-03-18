@@ -41,13 +41,21 @@ describe Googl::OAuth2::Server do
     it { subject.should respond_to(:request_access_token) }
 
     context "with valid code" do
+
       let(:server) { subject.request_access_token("4/z43CZpNmqd0IO3dR1Y_ouase13CH") }
-      it "should assign a access_token" do
+
+      it "should return a access_token" do
         server.access_token.should == "1/9eNgoHDXi-1u1fDzZ2wLLGATiaQZnWPB51nTvo8n9Sw"
       end
-      it "should assign a refresh_token" do
+
+      it "should return a refresh_token" do
         server.refresh_token.should == "1/gvmLC5XlU0qRPIBR3mt7OBBfEoTKB6i2T-Gu4dBDupw"
       end
+
+      it "should return a expires_in" do
+        server.expires_in.should == 3600
+      end
+
     end
 
     context "with invalid code" do
@@ -56,6 +64,30 @@ describe Googl::OAuth2::Server do
       end
     end
 
+  end
+
+  describe "#expires_at" do
+
+    before do
+      @now = Time.now
+      Time.stub!(:now).and_return(@now)
+    end
+
+    let(:server) { subject.request_access_token("4/z43CZpNmqd0IO3dR1Y_ouase13CH") }
+
+    it "should be a time representation of #expires_in" do
+      server.expires_at.should == (@now + 3600)
+    end
+
+  end
+
+  describe "#expires?" do
+    it "should be false if there is no expires_at" do
+      pending
+    end
+    it "should be true if there is an expires_at" do
+      pending
+    end
   end
 
 end

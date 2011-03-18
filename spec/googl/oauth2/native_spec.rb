@@ -37,19 +37,44 @@ describe Googl::OAuth2::Native do
     it { subject.should respond_to(:request_access_token) }
 
     context "with valid code" do
+
       let(:native) { subject.request_access_token("4/SuSud6RqPojUXsPpeh-wSVCwnmTQ") }
+
       it "should return a access_token" do
         native.access_token.should == "1/YCzoGAYT8XUuOifjNh_KqA"
       end
+
       it "should return a refresh_token" do
         native.refresh_token.should == "1/x_31GvgzdgHDMkRep5i8YxFlq76w3yjFu9Dp72Op-pI"
       end
+
+      it "should return a expires_in" do
+        native.expires_in.should == 3600
+      end
+
     end
 
     context "with invalid code" do
+
       it "should raise error" do
         lambda {  subject.request_access_token("my_invalid_code")  }.should raise_error(Exception, /400 invalid_token/)
       end
+
+    end
+
+  end
+
+  describe "#expires_at" do
+
+    before do
+      @now = Time.now
+      Time.stub!(:now).and_return(@now)
+    end
+
+    let(:native) { subject.request_access_token("4/SuSud6RqPojUXsPpeh-wSVCwnmTQ") }
+
+    it "should be a time representation of #expires_in" do
+      native.expires_at.should == (@now + 3600)
     end
 
   end

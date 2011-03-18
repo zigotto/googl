@@ -10,6 +10,7 @@ require 'googl/expand'
 require 'googl/client_login'
 require 'googl/ruby_extensions'
 
+require 'googl/oauth2/utils'
 require 'googl/oauth2/native'
 require 'googl/oauth2/server'
 
