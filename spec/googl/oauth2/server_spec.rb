@@ -76,7 +76,10 @@ describe Googl::OAuth2::Server do
 
     context "with invalid code" do
       it "should raise error" do
-        lambda {  subject.request_access_token("my_invalid_code")  }.should raise_error(Exception, /400 invalid_token/)
+        lambda {  subject.request_access_token("my_invalid_code")  }.should raise_error(/400 invalid_token/)
+      end
+      it "should raise Invalid Credentials on 401 response" do
+        lambda {  subject.request_access_token("4/JvkEhCtr7tv1A60ENmubQT-cosRl")  }.should raise_error(/401 Invalid Credentials/)
       end
     end
 

@@ -95,7 +95,13 @@ def fake_urls?(status)
     stub_request(:post, "https://accounts.google.com/o/oauth2/token").
       with(:body => "code=my_invalid_code&client_id=185706845724.apps.googleusercontent.com&client_secret=DrBLCdCQ3gOybHrj7TPz/B0N&redirect_uri=urn:ietf:wg:oauth:2.0:oob&grant_type=authorization_code", 
            :headers => {'Content-Type'=>'application/x-www-form-urlencoded'}).
-           to_return(load_fixture('oauth2/native_invalid.json'))    
+           to_return(load_fixture('oauth2/native_invalid.json'))
+
+    # OAuth 2.0 for native applications (expired token)
+    stub_request(:post, "https://accounts.google.com/o/oauth2/token").
+      with(:body => "code=4/JvkEhCtr7tv1A60ENmubQT-cosRl&client_id=185706845724.apps.googleusercontent.com&client_secret=DrBLCdCQ3gOybHrj7TPz/B0N&redirect_uri=urn:ietf:wg:oauth:2.0:oob&grant_type=authorization_code", 
+           :headers => {'Content-Type'=>'application/x-www-form-urlencoded'}).
+           to_return(load_fixture('oauth2/native_token_expires.json'))    
 
     # OAuth 2.0 for server-side web applications
     stub_request(:post, "https://accounts.google.com/o/oauth2/token").
@@ -108,6 +114,12 @@ def fake_urls?(status)
       with(:body => "code=my_invalid_code&client_id=438834493660.apps.googleusercontent.com&client_secret=8i4iJJkFTukWhNpxTU1b2Zhi&redirect_uri=http://gooogl.heroku.com/back&grant_type=authorization_code", 
            :headers => {'Content-Type'=>'application/x-www-form-urlencoded'}).
            to_return(load_fixture('oauth2/server_invalid.json'))
+
+    # OAuth 2.0 for server-side web applications (expired token)
+    stub_request(:post, "https://accounts.google.com/o/oauth2/token").
+      with(:body => "code=4/JvkEhCtr7tv1A60ENmubQT-cosRl&client_id=438834493660.apps.googleusercontent.com&client_secret=8i4iJJkFTukWhNpxTU1b2Zhi&redirect_uri=http://gooogl.heroku.com/back&grant_type=authorization_code", 
+           :headers => {'Content-Type'=>'application/x-www-form-urlencoded'}).
+           to_return(load_fixture('oauth2/server_token_expires.json'))    
 
   else
     WebMock.allow_net_connect!

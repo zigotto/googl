@@ -1,0 +1,27 @@
+HTTP/1.1 401 Unauthorized
+WWW-Authenticate: AuthSub realm="https://gaiastaging.corp.google.com/accounts/AuthSubRequest" allowed-scopes="https://www.googleapis.com/auth/urlshortener"
+Content-Type: application/json; charset=UTF-8
+Date: Fri, 18 Mar 2011 23:32:07 GMT
+Expires: Fri, 18 Mar 2011 23:32:07 GMT
+Cache-Control: private, max-age=0
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Server: GSE
+Transfer-Encoding: chunked
+
+{
+ "error": {
+  "errors": [
+   {
+    "domain": "global",
+    "reason": "invalid",
+    "message": "Invalid Credentials",
+    "locationType": "header",
+    "location": "Authorization"
+   }
+  ],
+  "code": 401,
+  "message": "Invalid Credentials"
+ }
+}
