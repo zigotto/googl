@@ -2,6 +2,8 @@ module Googl
   module OAuth2
     module Utils
 
+      attr_accessor :items
+
       def request_token(code, request_uri="urn:ietf:wg:oauth:2.0:oob")
         params = "code=#{code}&client_id=#{client_id}&client_secret=#{client_secret}&redirect_uri=#{request_uri}&grant_type=authorization_code"
         modify_headers('Content-Type' => 'application/x-www-form-urlencoded')
@@ -27,6 +29,21 @@ module Googl
 
       def expires?
         expires_at < Time.now
+      end
+
+      def authorized?
+        !access_token.nil? && !refresh_token.nil? && !expires_in.nil? && !expires_at.nil?
+      end
+
+      def history(options={})
+        if authorized?
+          resp = options.blank? ? get(Googl::Utils::API_HISTORY_URL) : get(Googl::Utils::API_HISTORY_URL, :query => options)
+          if resp.code == 200
+            self.items = resp.parsed_response.to_openstruct
+          else
+            raise exception("#{resp.code} #{resp.parsed_response}")
+          end
+        end
       end
 
     end

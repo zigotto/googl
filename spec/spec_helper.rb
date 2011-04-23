@@ -75,7 +75,7 @@ def fake_urls?(status)
            :headers => {'Authorization'=>'GoogleLogin auth=DQAAAK8AAAC9ahL-o7g', 'Content-Type'=>'application/json'}).
            to_return(load_fixture('shorten_authenticated.json'))
 
-    # History
+    # History for ClientLogin
     stub_request(:get, "https://www.googleapis.com/urlshortener/v1/url/history").
       with(:headers => {'Authorization'=>'GoogleLogin auth=DQAAAK8AAAC9ahL-o7g'}).
       to_return(load_fixture('history.json'))
@@ -101,7 +101,12 @@ def fake_urls?(status)
     stub_request(:post, "https://accounts.google.com/o/oauth2/token").
       with(:body => "code=4/JvkEhCtr7tv1A60ENmubQT-cosRl&client_id=185706845724.apps.googleusercontent.com&client_secret=DrBLCdCQ3gOybHrj7TPz/B0N&redirect_uri=urn:ietf:wg:oauth:2.0:oob&grant_type=authorization_code", 
            :headers => {'Content-Type'=>'application/x-www-form-urlencoded'}).
-           to_return(load_fixture('oauth2/native_token_expires.json'))    
+           to_return(load_fixture('oauth2/native_token_expires.json'))
+
+    # OAuth 2.0 for native applications (history)
+    stub_request(:get, "https://www.googleapis.com/urlshortener/v1/url/history").
+       with(:headers => {'Authorization'=>'OAuth 1/YCzoGAYT8XUuOifjNh_KqA', 'Content-Type'=>'application/x-www-form-urlencoded'}).
+      to_return(load_fixture('history.json'))
 
     # OAuth 2.0 for server-side web applications
     stub_request(:post, "https://accounts.google.com/o/oauth2/token").
@@ -120,6 +125,11 @@ def fake_urls?(status)
       with(:body => "code=4/JvkEhCtr7tv1A60ENmubQT-cosRl&client_id=438834493660.apps.googleusercontent.com&client_secret=8i4iJJkFTukWhNpxTU1b2Zhi&redirect_uri=http://gooogl.heroku.com/back&grant_type=authorization_code", 
            :headers => {'Content-Type'=>'application/x-www-form-urlencoded'}).
            to_return(load_fixture('oauth2/server_token_expires.json'))    
+
+    # OAuth 2.0 for server-side web applications (history)
+    stub_request(:get, "https://www.googleapis.com/urlshortener/v1/url/history").
+      with(:headers => {'Authorization'=>'OAuth 1/9eNgoHDXi-1u1fDzZ2wLLGATiaQZnWPB51nTvo8n9Sw'}).
+      to_return(load_fixture('history.json'))
 
   else
     WebMock.allow_net_connect!

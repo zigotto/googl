@@ -118,4 +118,39 @@ describe Googl::OAuth2::Server do
 
   end
 
+  describe "#authorized?" do
+    
+    it "should return false if client is not authorized" do
+      subject.authorized?.should be_false
+    end
+
+    let(:server) { subject.request_access_token("4/z43CZpNmqd0IO3dR1Y_ouase13CH") }
+
+    it "should return true if client is authorized" do
+      server.authorized?.should be_true
+    end
+
+  end
+
+  context "when gets a user history of shortened" do
+
+    it { subject.should respond_to(:history) }
+
+    it "should not return when client not authorized" do
+      subject.history.should be_nil
+    end
+
+    context "if authorized" do
+
+      let(:server) { subject.request_access_token("4/z43CZpNmqd0IO3dR1Y_ouase13CH") }
+      let(:history) { server.history }
+
+      it { history.should respond_to(:total_items) }
+      it { history.should respond_to(:items_per_page) }
+      it { history.should respond_to(:items) }
+
+    end
+
+  end
+
 end
