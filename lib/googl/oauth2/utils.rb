@@ -12,16 +12,13 @@ module Googl
           self.access_token  = resp["access_token"]
           self.refresh_token = resp["refresh_token"]
           self.expires_in    = resp["expires_in"]
+          self.expires_at    = Time.now + expires_in if expires_in
           self
         when 401
           raise exception("#{resp.code} #{resp.parsed_response["error"]["message"]}")
         else
           raise exception("#{resp.code} #{resp.parsed_response["error"]}")
         end
-      end
-
-      def expires_at
-        Time.now + expires_in if expires_in
       end
 
       def make_authorize_url(redirect_uri)
