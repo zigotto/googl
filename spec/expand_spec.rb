@@ -61,10 +61,10 @@ describe Googl::Expand do
           subject { Googl.expand('http://goo.gl/DWDfi', :projection => :full) }
 
           describe "#created" do
-            let(:element) { subject.created.to_s }
+            let(:element) { subject.created }
 
             it "should be the time url was shortened" do
-              element.should be == '2011-01-13 01:48:10 -0200'
+              element.to_s.should == Time.parse("2011-01-13 01:48:10").to_s
             end
 
           end
