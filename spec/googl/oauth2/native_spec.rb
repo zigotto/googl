@@ -96,4 +96,22 @@ describe Googl::OAuth2::Native do
 
   end
 
+  describe "#expires?" do
+
+    before :each do
+      Time.stub!(:now).and_return(Time.parse("2011-04-23 15:30:00"))
+      subject.request_access_token("4/SuSud6RqPojUXsPpeh-wSVCwnmTQ")
+    end
+
+    it "should be true if access token expires" do
+      Time.stub!(:now).and_return(Time.parse("2011-04-23 18:30:00"))
+      subject.expires?.should be_true
+    end
+
+    it "should be false if access token not expires" do
+      subject.expires?.should be_false
+    end
+
+  end
+
 end

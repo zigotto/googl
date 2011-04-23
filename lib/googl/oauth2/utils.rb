@@ -25,6 +25,10 @@ module Googl
         "https://accounts.google.com/o/oauth2/auth?client_id=#{client_id}&redirect_uri=#{redirect_uri}&scope=#{Googl::Utils::SCOPE_URL}&response_type=code"
       end
 
+      def expires?
+        expires_at < Time.now
+      end
+
     end
   end
 end
