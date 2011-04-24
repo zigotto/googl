@@ -7,7 +7,7 @@ describe Googl::OAuth2::Server do
   end
 
   subject do
-    Googl::OAuth2::Server.new("438834493660.apps.googleusercontent.com", "8i4iJJkFTukWhNpxTU1b2Zhi", "http://gooogl.heroku.com/back")
+    Googl::OAuth2.server("438834493660.apps.googleusercontent.com", "8i4iJJkFTukWhNpxTU1b2Zhi", "http://gooogl.heroku.com/back")
   end
 
   describe "#initialize" do

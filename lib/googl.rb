@@ -15,6 +15,7 @@ require 'googl/oauth2/native'
 require 'googl/oauth2/server'
 
 module Googl
+  extend self
 
   # Creates a new short URL
   #
@@ -22,7 +23,7 @@ module Googl
   #   url.short_url
   #   => "http://goo.gl/ump4S"
   #
-  def self.shorten(url=nil)
+  def shorten(url=nil)
     raise ArgumentError.new("URL to shorten is required") if url.blank?
     Googl::Shorten.new(url)
   end
@@ -84,7 +85,7 @@ module Googl
   #
   # For mor details, see http://code.google.com/intl/pt-BR/apis/urlshortener/v1/reference.html#resource_url
   #
-  def self.expand(url=nil, options={})
+  def expand(url=nil, options={})
     raise ArgumentError.new("URL to expand is required") if url.blank?
     options = {:shortUrl => url, :projection => nil}.merge!(options)
     Googl::Expand.new(options)
@@ -100,8 +101,39 @@ module Googl
   #
   # Go to http://goo.gl to see URL statistics.
   #
-  def self.client(email, passwd)
+  def client(email, passwd)
     Googl::ClientLogin.new(email, passwd)
+  end
+
+  # OAuth 2.0
+  #
+  # Google supports three flows of OAuth 2.0
+  #
+  # * client-side
+  # * server-side
+  # * native application
+  #
+  # Now, gem googl support only client-side and native application.
+  #
+  module OAuth2
+    extend self
+
+    # OAuth 2.0 for server-side web applications
+    #
+    # The server-side flow for web applications with servers that can securely store persistent information
+    #
+    def server(client_id, client_secret, redirect_uri)
+      Googl::OAuth2::Server.new(client_id, client_secret, redirect_uri)
+    end
+
+    # OAuth 2.0 for native applications
+    #
+    # The native application flow for desktop and mobile applications
+    #
+    def native(client_id, client_secret)
+      Googl::OAuth2::Native.new(client_id, client_secret)
+    end
+
   end
 
 end

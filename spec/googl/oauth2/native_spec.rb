@@ -7,7 +7,7 @@ describe Googl::OAuth2::Native do
   end
 
   subject do
-    Googl::OAuth2::Native.new("185706845724.apps.googleusercontent.com", "DrBLCdCQ3gOybHrj7TPz/B0N")
+    Googl::OAuth2.native("185706845724.apps.googleusercontent.com", "DrBLCdCQ3gOybHrj7TPz/B0N")
   end
 
   describe "#initialize" do
