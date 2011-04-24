@@ -6,7 +6,7 @@ module Googl
       include Googl::Utils
       include Googl::OAuth2::Utils
 
-      attr_accessor :client_id, :client_secret, :redirect_uri, :access_token, :refresh_token, :expires_in, :expires_at
+      attr_accessor :redirect_uri
 
       def initialize(client_id, client_secret, redirect_uri)
         self.client_id     = client_id

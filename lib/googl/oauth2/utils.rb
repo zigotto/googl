@@ -2,6 +2,7 @@ module Googl
   module OAuth2
     module Utils
 
+      attr_accessor :client_id, :client_secret, :access_token, :refresh_token, :expires_in, :expires_at
       attr_accessor :items
 
       def request_token(code, request_uri="urn:ietf:wg:oauth:2.0:oob")
@@ -36,13 +37,13 @@ module Googl
       end
 
       def history(options={})
-        if authorized?
-          resp = options.blank? ? get(Googl::Utils::API_HISTORY_URL) : get(Googl::Utils::API_HISTORY_URL, :query => options)
-          if resp.code == 200
-            self.items = resp.parsed_response.to_openstruct
-          else
-            raise exception("#{resp.code} #{resp.parsed_response}")
-          end
+        return unless authorized?
+        resp = options.blank? ? get(Googl::Utils::API_HISTORY_URL) : get(Googl::Utils::API_HISTORY_URL, :query => options)
+        case resp.code
+        when 200
+          self.items = resp.parsed_response.to_openstruct
+        else
+          raise exception("#{resp.code} #{resp.parsed_response}")
         end
       end
 
