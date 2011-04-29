@@ -60,6 +60,15 @@ describe Googl::Expand do
 
           subject { Googl.expand('http://goo.gl/DWDfi', :projection => :full) }
 
+          describe "#created" do
+            let(:element) { subject.created }
+
+            it "should be the time url was shortened" do
+              element.to_s.should == Time.parse("2011-01-13 01:48:10").to_s
+            end
+
+          end
+
           describe "#all_time" do
             let(:element) { subject.analytics.all_time }
 
@@ -67,7 +76,7 @@ describe Googl::Expand do
             it_should_behave_like 'a period'
 
             it "should rename id to label" do
-              element.countries.first.label.should == "BR" 
+              element.countries.first.label.should == "BR"
             end
           end
 
