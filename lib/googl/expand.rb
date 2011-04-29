@@ -14,7 +14,7 @@ module Googl
 
       resp = get(API_URL, :query => options)
       if resp.code == 200
-        created    = resp['created'] if resp.has_key?('created')
+        self.created    = resp['created'] if resp.has_key?('created')
         self.long_url   = resp['longUrl']
         self.analytics  = resp['analytics'].to_openstruct if resp.has_key?('analytics')
         self.status     = resp['status']

@@ -45,7 +45,60 @@ Go to http://goo.gl to see URL statistics.
 
 === OAuth
 
-  TODO
+Google supports three flows of OAuth 2.0
+
+* The <b>client-side</b> flow for JavaScript applications running in a browser. (TODO)
+* The <b>server-side</b> flow for web applications with servers that can securely store persistent information.
+* The <b>native application</b> flow for desktop and mobile applications.
+
+Today, gem googl support only <b>server-side</b> and <b>native application</b>.
+
+==== Server-side web applications
+
+You'll need to register your application with Google to get a <em>client_id</em> and record the <em>redirect_uri</em> you'd like to use. 
+See the Registering[http://code.google.com/apis/accounts/docs/OAuth2.html#Registering] your app with Google section for details on how to register.
+
+  client = Googl::OAuth2.server("client_id", "client_secret", "redirect_uri")
+
+Redirect your users to
+
+  client.authorize_url
+
+After the user approves access or chooses not to, we'll redirect to the <em>redirect_uri</em> you passed us and append either an authorization code.
+
+  client.request_access_token(params["code"])
+  client.authorized?
+  => true
+
+Now you can get a user's history, shorten url, etc...
+
+  history = client.history
+  history.total_items
+  => 19
+
+  url = Googl.shorten('https://github.com/zigotto/googl')
+  url.short_url
+  => http://goo.gl/DWDfi
+
+==== Native applications
+
+You'll need to register your application with Google to get a <em>client_id</em> and record the special <em>redirect_uri: urn:ietf:wg:oauth:2.0:oob</em>. 
+See the Registering[http://code.google.com/apis/accounts/docs/OAuth2.html#Registering] your app with Google section for details on how to register.
+
+When you use this redirect_uri, instead of redirecting the user's browser to a page on your site with an authorization code, Google will display the authorization code or error response in the title of the page and a text field with instructions for the user to copy and paste it in to your application. Your application can either monitor the window title of a web-view or browser window it launches and close it once the authorization code appears or prompt the user to copy and paste the code.
+
+  client = Googl::OAuth2.native("client_id", "client_secret")
+
+Open a browser or a webview to the OAuth dialog at
+
+  client.authorize_url
+
+In the native app flow, after the user approves access, we'll display the authorization code in the title of the page and in a text input with instructions for the user to copy and paste the code to your application
+
+  code = "copied code"
+  client.request_access_token(code)
+  client.authorized?
+  => true
 
 == Analytics
 
