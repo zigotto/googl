@@ -122,6 +122,8 @@ module Googl
     #
     # The server-side flow for web applications with servers that can securely store persistent information
     #
+    #   client = Googl::OAuth2.server("client_id", "client_secret", "redirect_uri")
+    #
     def server(client_id, client_secret, redirect_uri)
       Googl::OAuth2::Server.new(client_id, client_secret, redirect_uri)
     end
@@ -129,6 +131,8 @@ module Googl
     # OAuth 2.0 for native applications
     #
     # The native application flow for desktop and mobile applications
+    #
+    #   client = Googl::OAuth2.native("client_id", "client_secret")
     #
     def native(client_id, client_secret)
       Googl::OAuth2::Native.new(client_id, client_secret)
