@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{googl}
-  s.version = "0.4.3"
+  s.version = "0.5.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jesus Lopes"]
-  s.date = %q{2011-03-16}
+  s.date = %q{2011-05-01}
   s.description = %q{Small library for Google URL Shortener API}
   s.email = %q{jlopes@zigotto.com.br}
   s.extra_rdoc_files = [
@@ -27,11 +27,13 @@ Gem::Specification.new do |s|
     "lib/googl/base.rb",
     "lib/googl/client_login.rb",
     "lib/googl/expand.rb",
+    "lib/googl/oauth2/native.rb",
+    "lib/googl/oauth2/server.rb",
+    "lib/googl/oauth2/utils.rb",
     "lib/googl/request.rb",
     "lib/googl/ruby_extensions.rb",
     "lib/googl/shorten.rb",
-    "spec/client_spec.rb",
-    "spec/expand_spec.rb",
+    "lib/googl/utils.rb",
     "spec/fixtures/client_login_invalid.json",
     "spec/fixtures/client_login_valid.json",
     "spec/fixtures/expand.json",
@@ -42,25 +44,37 @@ Gem::Specification.new do |s|
     "spec/fixtures/expand_removed.json",
     "spec/fixtures/history.json",
     "spec/fixtures/history_projection_clicks.json",
+    "spec/fixtures/oauth2/native.json",
+    "spec/fixtures/oauth2/native_invalid.json",
+    "spec/fixtures/oauth2/native_token_expires.json",
+    "spec/fixtures/oauth2/server.json",
+    "spec/fixtures/oauth2/server_invalid.json",
+    "spec/fixtures/oauth2/server_token_expires.json",
     "spec/fixtures/shorten.json",
     "spec/fixtures/shorten_authenticated.json",
     "spec/fixtures/shorten_invalid_content_type.json",
-    "spec/request_spec.rb",
+    "spec/googl/client_spec.rb",
+    "spec/googl/expand_spec.rb",
+    "spec/googl/oauth2/native_spec.rb",
+    "spec/googl/oauth2/server_spec.rb",
+    "spec/googl/request_spec.rb",
+    "spec/googl/shorten_spec.rb",
     "spec/shared_examples.rb",
-    "spec/shorten_spec.rb",
     "spec/spec_helper.rb"
   ]
   s.homepage = %q{http://github.com/zigotto/googl}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.5.3}
+  s.rubygems_version = %q{1.4.2}
   s.summary = %q{Wrapper for Google URL Shortener API}
   s.test_files = [
-    "spec/client_spec.rb",
-    "spec/expand_spec.rb",
-    "spec/request_spec.rb",
+    "spec/googl/client_spec.rb",
+    "spec/googl/expand_spec.rb",
+    "spec/googl/oauth2/native_spec.rb",
+    "spec/googl/oauth2/server_spec.rb",
+    "spec/googl/request_spec.rb",
+    "spec/googl/shorten_spec.rb",
     "spec/shared_examples.rb",
-    "spec/shorten_spec.rb",
     "spec/spec_helper.rb"
   ]
 
