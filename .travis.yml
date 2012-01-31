@@ -1,0 +1,4 @@
+language: ruby
+branches:
+  only:
+    - master
