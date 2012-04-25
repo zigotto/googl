@@ -24,7 +24,7 @@ module Googl
   #   => "http://goo.gl/ump4S"
   #
   def shorten(url=nil)
-    raise ArgumentError.new("URL to shorten is required") if url.blank?
+    raise ArgumentError.new("URL to shorten is required") if url.nil? || url.strip.empty?
     Googl::Shorten.new(url)
   end
 
