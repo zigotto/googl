@@ -4,18 +4,19 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{googl}
-  s.version = "0.5.0"
+  s.name = "googl"
+  s.version = "0.6.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jesus Lopes"]
-  s.date = %q{2011-05-01}
-  s.description = %q{Small library for Google URL Shortener API}
-  s.email = %q{jlopes@zigotto.com.br}
+  s.date = "2012-05-05"
+  s.description = "Small library for Google URL Shortener API"
+  s.email = "jlopes@zigotto.com.br"
   s.extra_rdoc_files = [
     "README.rdoc"
   ]
   s.files = [
+    ".travis.yml",
     "Gemfile",
     "Gemfile.lock",
     "MIT-LICENSE",
@@ -62,11 +63,11 @@ Gem::Specification.new do |s|
     "spec/shared_examples.rb",
     "spec/spec_helper.rb"
   ]
-  s.homepage = %q{http://github.com/zigotto/googl}
+  s.homepage = "http://github.com/zigotto/googl"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.4.2}
-  s.summary = %q{Wrapper for Google URL Shortener API}
+  s.rubygems_version = "1.8.21"
+  s.summary = "Wrapper for Google URL Shortener API"
   s.test_files = [
     "spec/googl/client_spec.rb",
     "spec/googl/expand_spec.rb",
