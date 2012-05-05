@@ -58,15 +58,16 @@ def fake_urls?(status)
     url_login = "https://www.google.com/accounts/ClientLogin"
 
     # ClientLogin valid
-    params = "Passwd=my_valid_password&service=urlshortener&accountType=HOSTED_OR_GOOGLE&Email=my_user%40gmail.com&source=gem-googl-ruby"
     stub_request(:post, url_login).
-      with(:body => params,
-           :headers => {'Content-Type'=>'application/x-www-form-urlencoded'}).
-           to_return(load_fixture('client_login_valid.json'))
+       with(:body => {"accountType"=>"HOSTED_OR_GOOGLE", "service"=>"urlshortener", "Email"=>"my_user@gmail.com", "source"=>"gem-googl-ruby", "Passwd"=>"my_valid_password"},
+            :headers => {'Content-Type'=>'application/x-www-form-urlencoded'}).
+            to_return(load_fixture('client_login_valid.json'))
 
     # ClientLogin invalid
-    params = "Passwd=my_invalid_passwod&service=urlshortener&accountType=HOSTED_OR_GOOGLE&Email=my_invalid_gmail&source=gem-googl-ruby"
-    stub_request(:post, url_login).with(:body => params).to_return(load_fixture('client_login_invalid.json'))
+    stub_request(:post, url_login).
+       with(:body => {"Email"=>"my_invalid_gmail", "Passwd"=>"my_invalid_passwod", "source"=>"gem-googl-ruby", "service"=>"urlshortener", "accountType"=>"HOSTED_OR_GOOGLE"},
+            :headers => {'Authorization'=>'GoogleLogin auth=DQAAAK8AAAC9ahL-o7g', 'Content-Type'=>'application/x-www-form-urlencoded'}).
+       to_return(load_fixture('client_login_invalid.json'))
 
     # Shorten authenticated
     params = "{\"longUrl\":\"http://www.zigotto.net\"}"
