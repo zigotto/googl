@@ -4,7 +4,7 @@ Google URL Shortener API in Ruby
 
 == Continuous Integration
 
-http://travis-ci.org/zigotto/googl.png Travis[http://travis-ci.org/zigotto/googl]
+{<img src="https://secure.travis-ci.org/zigotto/googl.png" />}[http://travis-ci.org/zigotto/googl]
 
 == Basic Usage
 
