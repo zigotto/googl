@@ -71,7 +71,7 @@ describe Googl::ClientLogin do
       it { item.label.should == 'http://goo.gl/Ue8sQ' }
       it { item.long_url.should == 'http://facebook.com/' }
       it { item.status.should == 'OK' }
-      it { item.created.should be_instance_of(Time)}
+      it { item.created.should == "2011-01-13T21:39:17.271+00:00"}
 
     end
 

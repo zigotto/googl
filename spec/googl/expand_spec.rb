@@ -64,7 +64,7 @@ describe Googl::Expand do
             let(:element) { subject.created }
 
             it "should be the time url was shortened" do
-              element.should == Time.iso8601("2011-01-13T03:48:10.309+00:00")
+              element.should == "2011-01-13T03:48:10.309+00:00"
             end
 
           end
