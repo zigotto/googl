@@ -86,7 +86,7 @@ module Googl
   # For mor details, see http://code.google.com/intl/pt-BR/apis/urlshortener/v1/reference.html#resource_url
   #
   def expand(url=nil, options={})
-    raise ArgumentError.new("URL to expand is required") if url.blank?
+    raise ArgumentError.new("URL to expand is required") if url.nil? || url.strip.empty?
     options = {:shortUrl => url, :projection => nil}.merge!(options)
     Googl::Expand.new(options)
   end

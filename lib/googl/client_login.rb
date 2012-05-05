@@ -45,7 +45,7 @@ module Googl
     #   history = client.history(:projection => :analytics_clicks)
     #
     def history(options={})
-      resp = options.blank? ? get(Googl::Utils::API_HISTORY_URL) : get(Googl::Utils::API_HISTORY_URL, :query => options)
+      resp = (options.nil? || options.empty?) ? get(Googl::Utils::API_HISTORY_URL) : get(Googl::Utils::API_HISTORY_URL, :query => options)
       case resp.code
       when 200
         self.items = resp.parsed_response.to_openstruct
