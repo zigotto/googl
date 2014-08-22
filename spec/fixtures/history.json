@@ -147,6 +147,13 @@ Transfer-Encoding: chunked
    "longUrl": "http://jlopes.zigotto.com.br/",
    "status": "OK",
    "created": "2010-10-01T13:26:04.029+00:00"
+  },
+  {
+   "kind": "urlshortener#url",
+   "id": "http://goo.gl/ice1",
+   "longUrl": "http://www.ice.com/",
+   "status": "OK",
+   "created": "2014-01-13T14:52:30.401+00:00"
   }
  ]
 }

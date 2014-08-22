@@ -47,6 +47,21 @@ For shorten requests, each short URL for an authenticated user is unique, and th
 
 Go to http://goo.gl to see URL statistics.
 
+=== Shorten without generating new short URL (if exists long_url in history)
+
+  client = Googl.client('user@gmail.com', 'my_valid_password')
+  url = client.shorten('https://github.com/zigotto/googl')
+  url.short_url
+  => http://goo.gl/DWDfi
+
+  url = client.shorten('https://github.com/zigotto/googl')
+  url.short_url
+  => http://goo.gl/Oh48S
+
+  url = client.shorten('https://github.com/zigotto/googl', unique: true)
+  url.short_url
+  => http://goo.gl/Oh48S
+
 === OAuth
 
 Google supports three flows of OAuth 2.0

@@ -76,6 +76,23 @@ def fake_urls?(status)
            :headers => {'Authorization'=>'GoogleLogin auth=DQAAAK8AAAC9ahL-o7g', 'Content-Type'=>'application/json'}).
            to_return(load_fixture('shorten_authenticated.json'))
 
+    # simulate random url generation
+    $COUNTER = true 
+    params = "{\"longUrl\":\"http://www.ice.com\"}"
+    stub_request(:post, url_shorten).
+      with(:body => params, 
+        :headers => {'Authorization'=>'GoogleLogin auth=DQAAAK8AAAC9ahL-o7g', 'Content-Type'=>'application/json'}).
+        to_return(lambda do |request|
+          if $COUNTER
+            $COUNTER = !$COUNTER
+            load_fixture('shorten_ice1.json')
+          else
+            $COUNTER = !$COUNTER
+            load_fixture('shorten_ice2.json')
+          end
+        end
+        )
+
     # History for ClientLogin
     stub_request(:get, "https://www.googleapis.com/urlshortener/v1/url/history").
       with(:headers => {'Authorization'=>'GoogleLogin auth=DQAAAK8AAAC9ahL-o7g'}).

@@ -24,8 +24,8 @@ module Googl
     #
     # See Googl.client
     #
-    def shorten(url)
-      Googl.shorten(url)
+    def shorten(url, options = {})
+      Googl.shorten(url, options)
     end
 
     # Gets a user's history of shortened URLs. (Authenticated)
