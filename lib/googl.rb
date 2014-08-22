@@ -23,9 +23,9 @@ module Googl
   #   url.short_url
   #   => "http://goo.gl/ump4S"
   #
-  def shorten(url=nil)
+  def shorten(url=nil, options = {})
     raise ArgumentError.new("URL to shorten is required") if url.nil? || url.strip.empty?
-    Googl::Shorten.new(url)
+    Googl::Shorten.new(url, options)
   end
 
   # Expands a short URL or gets creation time and analytics
@@ -101,8 +101,12 @@ module Googl
   #
   # Go to http://goo.gl to see URL statistics.
   #
-  def client(email, passwd)
-    Googl::ClientLogin.new(email, passwd)
+  def client(email = nil, passwd = nil)
+    unless(email.nil? && passwd.nil?)
+      @client_instance = Googl::ClientLogin.new(email, passwd)
+    end
+
+    @client_instance
   end
 
   # OAuth 2.0

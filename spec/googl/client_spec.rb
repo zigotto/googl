@@ -46,6 +46,26 @@ describe Googl::ClientLogin do
       it "should return a short URL" do
         subject.short_url.start_with?("http://goo.gl/").should be_true
       end
+
+      context "without unique parameter" do
+
+        let(:first) { @client.shorten('http://www.ice.com')}
+        let(:second) { @client.shorten('http://www.ice.com')}
+
+        it "should generate new short URL" do
+          first.short_url.should_not eql(second.short_url)
+        end
+      end     
+
+      context "with unique parameter" do
+
+        let(:first) { @client.shorten('http://www.ice.com', unique: true)}
+        let(:second) { @client.shorten('http://www.ice.com', unique: true)}
+
+        it "should get short URL from history" do
+          first.short_url.should eql(second.short_url)
+        end
+      end     
     end
     
   end
