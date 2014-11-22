@@ -28,3 +28,4 @@ spec/dummy/tmp/
 .rspec
 .rvmrc
 .rbenv-version
+Gemfile.lock
