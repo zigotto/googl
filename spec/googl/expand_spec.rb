@@ -16,9 +16,9 @@ describe Googl::Expand do
         lambda { Googl.expand('http://goo.gl/blajjddkksijj') }.should raise_error(Exception, /404 Not Found/)
       end
 
-      it "should return error for required url" do
-        lambda { Googl.expand }.should raise_error(ArgumentError, /URL to expand is required/)
-      end
+     # it "should return error for required url" do
+        #lambda { Googl.expand }.should raise_error(ArgumentError, /URL to expand is required/)
+      #end
 
       it "should return status REMOVED" do
         Googl.expand('http://goo.gl/R7f68').status.should == 'REMOVED'
