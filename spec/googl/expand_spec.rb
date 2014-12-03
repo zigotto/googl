@@ -10,7 +10,7 @@ describe Googl::Expand do
 
     it { Googl.should respond_to(:expand) }
 
-    context "wirh invalid url" do
+    context "with invalid url" do
 
       it "should return error 404" do
         lambda { Googl.expand('http://goo.gl/blajjddkksijj') }.should raise_error(Exception, /404 Not Found/)
