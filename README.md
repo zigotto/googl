@@ -1,5 +1,27 @@
 # googl
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Continuous Integration](#continuous-integration)
+- [Basic Usage](#basic-usage)
+  - [Shorten a long URL](#shorten-a-long-url)
+  - [Expand a short URL](#expand-a-short-url)
+- [Authentication](#authentication)
+  - [ClientLogin](#clientlogin)
+  - [OAuth](#oauth)
+    - [Server-side web applications](#server-side-web-applications)
+    - [Native applications](#native-applications)
+- [Analytics](#analytics)
+  - [Get Analytics](#get-analytics)
+- [History](#history)
+- [Installation](#installation)
+- [Note on Patches/Pull Requests](#note-on-patchespull-requests)
+- [License](#license)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 Google URL Shortener API in Ruby
 
 ## Continuous Integration
