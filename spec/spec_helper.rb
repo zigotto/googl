@@ -30,6 +30,30 @@ def fake_urls?(status)
       with(:body => params).
       to_return(load_fixture('shorten_invalid_content_type.json'))
 
+    # Shorten with user_ip
+    url_shorten = "https://www.googleapis.com/urlshortener/v1/url"
+    params = "{\"longUrl\":\"http://www.zigotto.com\",\"userIp\":\"54.154.97.74\"}" #json
+    stub_request(:post, url_shorten).
+        with(:body => params,
+             :headers => {'Content-Type'=>'application/json'}).
+        to_return(load_fixture('shorten.json'))
+
+    # Shorten with api_key
+    url_shorten_with_key = "https://www.googleapis.com/urlshortener/v1/url?key=Abc123"
+    params = "{\"longUrl\":\"http://www.zigotto.com\"}" #json
+    stub_request(:post, url_shorten_with_key).
+        with(:body => params,
+             :headers => {'Content-Type'=>'application/json'}).
+        to_return(load_fixture('shorten.json'))
+
+    # Shorten with user_ip and api_key
+    url_shorten_with_key = "https://www.googleapis.com/urlshortener/v1/url?key=Abc123"
+    params = "{\"longUrl\":\"http://www.zigotto.com\",\"userIp\":\"54.154.97.74\"}" #json
+    stub_request(:post, url_shorten_with_key).
+        with(:body => params,
+             :headers => {'Content-Type'=>'application/json'}).
+        to_return(load_fixture('shorten.json'))
+
     # Expand
     url_expand = "https://www.googleapis.com/urlshortener/v1/url?shortUrl=http://goo.gl/7lob"
     stub_request(:get, url_expand).to_return(load_fixture('expand.json'))

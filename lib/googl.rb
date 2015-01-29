@@ -23,9 +23,9 @@ module Googl
   #   url.short_url
   #   => "http://goo.gl/ump4S"
   #
-  def shorten(url=nil)
+  def shorten(url=nil, user_ip = nil, api_key = nil)
     raise ArgumentError.new("URL to shorten is required") if url.nil? || url.strip.empty?
-    Googl::Shorten.new(url)
+    Googl::Shorten.new(url, user_ip, api_key)
   end
 
   # Expands a short URL or gets creation time and analytics

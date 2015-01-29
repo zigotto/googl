@@ -53,6 +53,36 @@ describe Googl::Shorten do
 
     end
 
+    context "with user_ip" do
+      subject { Googl.shorten('http://www.zigotto.com', "54.154.97.74") }
+
+      describe "#short_url" do
+        it "should return a short URL" do
+          subject.short_url.should == 'http://goo.gl/ump4S'
+        end
+      end
+    end
+
+    context "with api_key" do
+      subject { Googl.shorten('http://www.zigotto.com', nil, "Abc123") }
+
+      describe "#short_url" do
+        it "should return a short URL" do
+          subject.short_url.should == 'http://goo.gl/ump4S'
+        end
+      end
+    end
+
+    context "with user_ip and api_key" do
+      subject { Googl.shorten('http://www.zigotto.com', nil, "Abc123") }
+
+      describe "#short_url" do
+        it "should return a short URL" do
+          subject.short_url.should == 'http://goo.gl/ump4S'
+        end
+      end
+    end
+
   end
 
 end
