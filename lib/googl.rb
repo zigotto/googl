@@ -9,6 +9,7 @@ require 'googl/shorten'
 require 'googl/expand'
 require 'googl/client_login'
 require 'googl/ruby_extensions'
+require 'googl/url'
 
 require 'googl/oauth2/utils'
 require 'googl/oauth2/native'
@@ -23,9 +24,9 @@ module Googl
   #   url.short_url
   #   => "http://goo.gl/ump4S"
   #
-  def shorten(url=nil)
-    raise ArgumentError.new("URL to shorten is required") if url.nil? || url.strip.empty?
-    Googl::Shorten.new(url)
+  def shorten(url)
+    to_shorten = Googl::Url.new(url)
+    Googl::Shorten.new(to_shorten.to_s)
   end
 
   # Expands a short URL or gets creation time and analytics
@@ -85,9 +86,9 @@ module Googl
   #
   # For mor details, see http://code.google.com/intl/pt-BR/apis/urlshortener/v1/reference.html#resource_url
   #
-  def expand(url=nil, options={})
-    raise ArgumentError.new("URL to expand is required") if url.nil? || url.strip.empty?
-    options = {:shortUrl => url, :projection => nil}.merge!(options)
+  def expand(url, options={})
+    to_expand = Googl::Url.new(url)
+    options = {:shortUrl => to_expand.to_s, :projection => nil}.merge!(options)
     Googl::Expand.new(options)
   end
 
