@@ -85,7 +85,7 @@ describe Googl::OAuth2::Native do
 
     before do
       @now = Time.now
-      Time.stub!(:now).and_return(@now)
+      Time.stub(:now).and_return(@now)
     end
 
     let(:native) { subject.request_access_token("4/SuSud6RqPojUXsPpeh-wSVCwnmTQ") }
@@ -99,17 +99,17 @@ describe Googl::OAuth2::Native do
   describe "#expires?" do
 
     before :each do
-      Time.stub!(:now).and_return(Time.parse("2011-04-23 15:30:00"))
+      Time.stub(:now).and_return(Time.parse("2011-04-23 15:30:00"))
       subject.request_access_token("4/SuSud6RqPojUXsPpeh-wSVCwnmTQ")
     end
 
     it "should be true if access token expires" do
-      Time.stub!(:now).and_return(Time.parse("2011-04-23 18:30:00"))
-      subject.expires?.should be_true
+      Time.stub(:now).and_return(Time.parse("2011-04-23 18:30:00"))
+      subject.expires?.should be true
     end
 
     it "should be false if access token not expires" do
-      subject.expires?.should be_false
+      subject.expires?.should be false
     end
 
   end
@@ -117,13 +117,13 @@ describe Googl::OAuth2::Native do
   describe "#authorized?" do
     
     it "should return false if client is not authorized" do
-      subject.authorized?.should be_false
+      subject.authorized?.should be false
     end
 
     let(:native) { subject.request_access_token("4/SuSud6RqPojUXsPpeh-wSVCwnmTQ") }
 
     it "should return true if client is authorized" do
-      native.authorized?.should be_true
+      native.authorized?.should be true
     end
 
   end

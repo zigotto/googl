@@ -44,7 +44,7 @@ describe Googl::ClientLogin do
 
     describe "#short_url" do
       it "should return a short URL" do
-        subject.short_url.start_with?("http://goo.gl/").should be_true
+        subject.short_url.start_with?("http://goo.gl/").should be true
       end
     end
     
