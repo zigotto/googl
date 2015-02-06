@@ -14,6 +14,9 @@ Google URL Shortener API in Ruby
 ``` ruby
 url = Googl.shorten('http://www.zigotto.com')
 
+// Optional - provide a user_ip and your google api_key to bypass Google's request rate limits
+url = Googl.shorten('http://www.zigotto.com', "213.57.23.49", "google_api_key")
+
 url.short_url
 #=> "http://goo.gl/ump4S"
 
