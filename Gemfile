@@ -7,4 +7,5 @@ group :development do
   gem "rspec", "~> 2.10"
   gem "jeweler", ">= 1.8.3"
   gem "webmock", "~> 1.8.6"
+  gem "timecop", "~> 0.7.1"
 end

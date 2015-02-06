@@ -86,10 +86,9 @@ describe Googl::OAuth2::Server do
   end
 
   describe "#expires_at" do
-
     before do
       @now = Time.now
-      Time.stub(:now).and_return(@now)
+      Timecop.freeze(@now)
     end
 
     let(:server) { subject.request_access_token("4/z43CZpNmqd0IO3dR1Y_ouase13CH") }
@@ -98,24 +97,30 @@ describe Googl::OAuth2::Server do
       server.expires_at.should == (@now + 3600)
     end
 
+    after do
+      Timecop.return
+    end
   end
 
   describe "#expires?" do
-
     before :each do
-      Time.stub(:now).and_return(Time.parse("2011-04-23 15:30:00"))
+      Timecop.freeze(DateTime.parse("2011-04-23 15:30:00"))
       subject.request_access_token("4/z43CZpNmqd0IO3dR1Y_ouase13CH")
     end
 
     it "should be true if access token expires" do
-      Time.stub(:now).and_return(Time.parse("2011-04-23 18:30:00"))
-      subject.expires?.should be true
+      Timecop.freeze(DateTime.parse("2011-04-23 18:30:00")) do
+        subject.expires?.should be true
+      end
     end
 
     it "should be false if access token not expires" do
       subject.expires?.should be false
     end
 
+    after do
+      Timecop.return
+    end
   end
 
   describe "#authorized?" do

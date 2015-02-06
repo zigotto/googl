@@ -4,6 +4,7 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 require "rubygems"
 require "rspec"
 require 'webmock/rspec'
+require 'timecop'
 require 'googl'
 
 require 'shared_examples'
