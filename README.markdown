@@ -246,4 +246,4 @@ gem install googl
 
 ## License
 
-MIT License. Copyright 2011-2014 Zigotto®. http://www.zigotto.com.br
+MIT License. Copyright 2011-2015 Zigotto®. http://www.zigotto.com.br
