@@ -22,7 +22,7 @@ module Googl
     end
 
     def exception(msg)
-      Exception.new(msg)
+      Googl::Error.new(msg)
     end
 
   end
