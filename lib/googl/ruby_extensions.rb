@@ -1,11 +1,11 @@
 # Rails
-class String # :nodoc:
-  def underscore
-    self.gsub(/::/, '/').
-      gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2').
-      gsub(/([a-z\d])([A-Z])/,'\1_\2').
-      tr("-", "_").
-      downcase
+module StringHelper
+  def self.underscore(str)
+    str.gsub(/::/, '/').
+        gsub(/([A-Z]+)([A-Z][a-z])/, '\1_\2').
+        gsub(/([a-z\d])([A-Z])/, '\1_\2').
+        tr("-", "_").
+        downcase
   end
 end
 
@@ -30,7 +30,7 @@ class Hash #:nodoc:
   end  
   def to_openstruct
     map = inject({}) do |mapped, (key, value)| 
-      mapped[key.underscore] = value.to_openstruct
+      mapped[StringHelper.underscore(key)] = value.to_openstruct
       mapped.move('id', 'label')
     end
     OpenStruct.new(map)
