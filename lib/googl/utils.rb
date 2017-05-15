@@ -10,7 +10,7 @@ module Googl
     private
 
     def modify_headers(item)
-      Googl::Request.headers.merge!(item)
+      Googl::Request.headers(item)
     end
 
     def post(url, params={})
